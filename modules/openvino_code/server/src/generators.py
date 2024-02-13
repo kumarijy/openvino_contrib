@@ -35,7 +35,7 @@ SUMMARIZE_STOP_TOKENS = ("\r\n", "\n")
 
 
 def get_model_class(checkpoint: Union[str, Path]) -> Type[OVModel]:
-    config = AutoConfig.from_pretrained(checkpoint)
+    config = AutoConfig.from_pretrained(checkpoint, trust_remote_code=True)
     architecture: str = config.architectures[0]
     if architecture.endswith("ConditionalGeneration") or architecture.endswith("Seq2SeqLM"):
         return OVModelForSeq2SeqLM
@@ -48,7 +48,7 @@ def get_model(checkpoint: str, device: str = "CPU") -> OVModel:
     model_path = model_dir / Path(checkpoint)
     if model_path.exists():
         model_class = get_model_class(model_path)
-        model = model_class.from_pretrained(model_path, ov_config=ov_config, compile=False, device=device)
+        model = model_class.from_pretrained(model_path, ov_config=ov_config, compile=False, device=device, trust_remote_code=True)
     else:
         model_class = get_model_class(checkpoint)
         try:

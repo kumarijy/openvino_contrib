@@ -6,6 +6,7 @@ enum ModelId {
   STABLECODE_COMPLETION_ALPHA_3B_4K_OPENVINO_INT8 = 'chgk13/stablecode-completion-alpha-3b-4k-openvino-int8',
   DEEPSEEK_CODER_1_3B_INT8 = 'kumarijy/deepseek-coder-1_3b-instruct-openvino-int8',
   REFACT_FIM_1_6B_INT8 = 'kumarijy/Refact-1_6B-fim-openvino-int8',
+  //REFACT_FIM_1_6B_INT8 = 'kumarijy/refact-1_6B-fim-openvino',
 }
 
 export enum ModelName {
