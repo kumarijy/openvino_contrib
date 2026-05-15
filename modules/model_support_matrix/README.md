@@ -8,7 +8,7 @@
 
 An interactive web application for tracking AI model support across OpenVINO GenAI releases.
 
-**🌐 Live Demo**: *[Add your deployment URL here after deployment]*
+**🌐 Live Demo**: https://kumarijy.github.io/openvino_contrib/
 
 ## Overview
 
