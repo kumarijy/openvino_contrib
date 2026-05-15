@@ -3,7 +3,8 @@
     "2024.5",
     "2025.0",
     "2025.1",
-    "2026.0"
+    "2026.0",
+    "2026.1"
   ],
   "models": [
     {
@@ -15,26 +16,122 @@
       "homepage": "https://llama.meta.com",
       "documentation": "https://github.com/meta-llama/llama3",
       "license": "Meta Llama 3 Community License",
-      "tags": ["chat", "instruction", "open-source"],
+      "tags": [
+        "chat",
+        "instruction",
+        "open-source"
+      ],
       "variants": [
         {
           "size": "8B",
           "huggingfaceId": "meta-llama/Meta-Llama-3-8B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "70B",
           "huggingfaceId": "meta-llama/Meta-Llama-3-70B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -48,26 +145,122 @@
       "homepage": "https://llama.meta.com",
       "documentation": "https://github.com/meta-llama/llama-models",
       "license": "Meta Llama 3 Community License",
-      "tags": ["vision", "multimodal", "chat"],
+      "tags": [
+        "vision",
+        "multimodal",
+        "chat"
+      ],
       "variants": [
         {
           "size": "11B",
           "huggingfaceId": "meta-llama/Llama-3.2-11B-Vision-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "90B",
           "huggingfaceId": "meta-llama/Llama-3.2-90B-Vision-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -81,46 +274,235 @@
       "homepage": "https://github.com/QwenLM/Qwen2.5",
       "documentation": "https://qwen.readthedocs.io/",
       "license": "Apache 2.0",
-      "tags": ["multilingual", "chat", "open-source", "coding"],
+      "tags": [
+        "multilingual",
+        "chat",
+        "open-source",
+        "coding"
+      ],
       "variants": [
         {
           "size": "0.5B",
           "huggingfaceId": "Qwen/Qwen2.5-0.5B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "7B",
           "huggingfaceId": "Qwen/Qwen2.5-7B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "14B",
           "huggingfaceId": "Qwen/Qwen2.5-14B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "72B",
           "huggingfaceId": "Qwen/Qwen2.5-72B-Instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -134,26 +516,122 @@
       "homepage": "https://azure.microsoft.com/en-us/products/phi-3",
       "documentation": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
       "license": "MIT",
-      "tags": ["small", "efficient", "instruction"],
+      "tags": [
+        "small",
+        "efficient",
+        "instruction"
+      ],
       "variants": [
         {
           "size": "3.8B",
           "huggingfaceId": "microsoft/Phi-3-mini-4k-instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "14B",
           "huggingfaceId": "microsoft/Phi-3-medium-4k-instruct",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -167,16 +645,66 @@
       "homepage": "https://mistral.ai/",
       "documentation": "https://docs.mistral.ai/",
       "license": "Apache 2.0",
-      "tags": ["chat", "instruction", "open-source"],
+      "tags": [
+        "chat",
+        "instruction",
+        "open-source"
+      ],
       "variants": [
         {
           "size": "7B",
           "huggingfaceId": "mistralai/Mistral-7B-Instruct-v0.3",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -190,36 +718,178 @@
       "homepage": "https://ai.google.dev/gemma",
       "documentation": "https://ai.google.dev/gemma/docs",
       "license": "Gemma Terms of Use",
-      "tags": ["chat", "instruction", "google"],
+      "tags": [
+        "chat",
+        "instruction",
+        "google"
+      ],
       "variants": [
         {
           "size": "2B",
           "huggingfaceId": "google/gemma-2-2b-it",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "9B",
           "huggingfaceId": "google/gemma-2-9b-it",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "27B",
           "huggingfaceId": "google/gemma-2-27b-it",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -233,26 +903,122 @@
       "homepage": "https://llava-vl.github.io/",
       "documentation": "https://github.com/LLaVA-VL/LLaVA-NeXT",
       "license": "Apache 2.0",
-      "tags": ["vision", "multimodal", "open-source"],
+      "tags": [
+        "vision",
+        "multimodal",
+        "open-source"
+      ],
       "variants": [
         {
           "size": "7B",
           "huggingfaceId": "llava-hf/llava-v1.6-mistral-7b-hf",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "34B",
           "huggingfaceId": "llava-hf/llava-v1.6-34b-hf",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -266,26 +1032,121 @@
       "homepage": "https://stability.ai/stable-diffusion",
       "documentation": "https://github.com/Stability-AI/generative-models",
       "license": "CreativeML Open RAIL++-M",
-      "tags": ["text-to-image", "diffusion"],
+      "tags": [
+        "text-to-image",
+        "diffusion"
+      ],
       "variants": [
         {
           "size": "base",
           "huggingfaceId": "stabilityai/stable-diffusion-xl-base-1.0",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "refiner",
           "huggingfaceId": "stabilityai/stable-diffusion-xl-refiner-1.0",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -299,26 +1160,122 @@
       "homepage": "https://blackforestlabs.ai/",
       "documentation": "https://github.com/black-forest-labs/flux",
       "license": "Apache 2.0",
-      "tags": ["text-to-image", "diffusion", "high-quality"],
+      "tags": [
+        "text-to-image",
+        "diffusion",
+        "high-quality"
+      ],
       "variants": [
         {
           "size": "schnell",
           "huggingfaceId": "black-forest-labs/FLUX.1-schnell",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "dev",
           "huggingfaceId": "black-forest-labs/FLUX.1-dev",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         }
       ]
@@ -332,26 +1289,121 @@
       "homepage": "https://github.com/THUDM/CogVideo",
       "documentation": "https://github.com/THUDM/CogVideo",
       "license": "Apache 2.0",
-      "tags": ["text-to-video", "generation"],
+      "tags": [
+        "text-to-video",
+        "generation"
+      ],
       "variants": [
         {
           "size": "2B",
           "huggingfaceId": "THUDM/CogVideoX-2b",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": true }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            }
           ]
         },
         {
           "size": "5B",
           "huggingfaceId": "THUDM/CogVideoX-5b",
           "versionSupport": [
-            { "version": "2024.5", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": false, "devices": { "cpu": false, "gpu": false, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": false, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": false,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -365,56 +1417,289 @@
       "homepage": "https://openai.com/research/whisper",
       "documentation": "https://github.com/openai/whisper",
       "license": "MIT",
-      "tags": ["speech-to-text", "multilingual"],
+      "tags": [
+        "speech-to-text",
+        "multilingual"
+      ],
       "variants": [
         {
           "size": "tiny",
           "huggingfaceId": "openai/whisper-tiny",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "base",
           "huggingfaceId": "openai/whisper-base",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "small",
           "huggingfaceId": "openai/whisper-small",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "medium",
           "huggingfaceId": "openai/whisper-medium",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "large-v3",
           "huggingfaceId": "openai/whisper-large-v3",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -428,26 +1713,122 @@
       "homepage": "https://github.com/suno-ai/bark",
       "documentation": "https://github.com/suno-ai/bark",
       "license": "MIT",
-      "tags": ["text-to-speech", "multilingual", "audio"],
+      "tags": [
+        "text-to-speech",
+        "multilingual",
+        "audio"
+      ],
       "variants": [
         {
           "size": "small",
           "huggingfaceId": "suno/bark-small",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "large",
           "huggingfaceId": "suno/bark",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -461,16 +1842,66 @@
       "homepage": "https://github.com/FlagOpen/FlagEmbedding",
       "documentation": "https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/BGE_M3",
       "license": "MIT",
-      "tags": ["embeddings", "multilingual", "retrieval"],
+      "tags": [
+        "embeddings",
+        "multilingual",
+        "retrieval"
+      ],
       "variants": [
         {
           "size": "base",
           "huggingfaceId": "BAAI/bge-m3",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -484,16 +1915,66 @@
       "homepage": "https://github.com/FlagOpen/FlagEmbedding",
       "documentation": "https://github.com/FlagOpen/FlagEmbedding",
       "license": "MIT",
-      "tags": ["embeddings", "retrieval", "semantic-search"],
+      "tags": [
+        "embeddings",
+        "retrieval",
+        "semantic-search"
+      ],
       "variants": [
         {
           "size": "en-v1.5",
           "huggingfaceId": "BAAI/bge-large-en-v1.5",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
@@ -507,26 +1988,122 @@
       "homepage": "https://github.com/FlagOpen/FlagEmbedding",
       "documentation": "https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/reranker",
       "license": "MIT",
-      "tags": ["reranker", "retrieval", "cross-encoder"],
+      "tags": [
+        "reranker",
+        "retrieval",
+        "cross-encoder"
+      ],
       "variants": [
         {
           "size": "base",
           "huggingfaceId": "BAAI/bge-reranker-base",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         },
         {
           "size": "large",
           "huggingfaceId": "BAAI/bge-reranker-large",
           "versionSupport": [
-            { "version": "2024.5", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": false }, "loraSupport": false },
-            { "version": "2025.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2025.1", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false },
-            { "version": "2026.0", "supported": true, "devices": { "cpu": true, "gpu": true, "npu": true }, "loraSupport": false }
+            {
+              "version": "2024.5",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2026.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            }
           ]
         }
       ]
