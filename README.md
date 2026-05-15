@@ -16,6 +16,7 @@ This list gives an overview of all modules available inside the contrib reposito
 * [**OpenVINO Code**](./modules/openvino_code): VSCode extension for AI code completion with OpenVINO.
 * [**Ollama-OpenVINO**](./modules/ollama_openvino): OpenVINO GenAI empowered Ollama which accelerate LLM on Intel platforms(including CPU, iGPU/dGPU, NPU).
 * [**ov_training_kit**](./modules/ov_training_kit): Training Kit Python library -- provides scikit-learn, PyTorch and Tensorflow wrappers for training, optimization, and deployment with OpenVINO on AI PCs.
+* [**Model Support Matrix**](./modules/model_support_matrix): Interactive web application for tracking AI model support across OpenVINO GenAI releases. [Live Demo](https://kumarijy.github.io/openvino_contrib/)
 * [**3D Point Pillars**](./modules/3d/pointPillars): Use OpenVINO to perform 3D object detection with PointPillars model.
 
 ## How to build OpenVINO with extra modules
