@@ -10,6 +10,7 @@ interface UseFiltersReturn {
   setSearchQuery: (query: string) => void;
   setSelectedVersion: (version: OpenVINOVersion | 'all') => void;
   toggleCategory: (category: ModelCategory) => void;
+  setCategories: (categories: ModelCategory[]) => void;
   toggleDevice: (device: DeviceType) => void;
   setLoraOnly: (value: boolean) => void;
   clearFilters: () => void;
@@ -50,6 +51,10 @@ export function useFilters(initialVersion?: OpenVINOVersion): UseFiltersReturn {
     });
   }, []);
 
+  const setCategories = useCallback((categories: ModelCategory[]) => {
+    setFilters((prev) => ({ ...prev, selectedCategories: categories }));
+  }, []);
+
   const toggleDevice = useCallback((device: DeviceType) => {
     setFilters((prev) => {
       const devices = prev.selectedDevices.includes(device)
@@ -84,6 +89,7 @@ export function useFilters(initialVersion?: OpenVINOVersion): UseFiltersReturn {
     setSearchQuery,
     setSelectedVersion,
     toggleCategory,
+    setCategories,
     toggleDevice,
     setLoraOnly,
     clearFilters,

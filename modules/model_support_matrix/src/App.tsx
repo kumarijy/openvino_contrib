@@ -29,6 +29,7 @@ const App: React.FC = () => {
     setSearchQuery,
     setSelectedVersion,
     toggleCategory,
+    setCategories,
     toggleDevice,
     setLoraOnly,
     clearFilters,
@@ -67,8 +68,13 @@ const App: React.FC = () => {
   };
 
   const handleCategoryClick = (category: ModelCategory) => {
-    // Toggle the category filter
-    toggleCategory(category);
+    // If the category is already the only selected one, clear it
+    // Otherwise, set it as the only selected category
+    if (filters.selectedCategories.length === 1 && filters.selectedCategories[0] === category) {
+      setCategories([]);
+    } else {
+      setCategories([category]);
+    }
     // Scroll to the results
     window.scrollTo({ top: 400, behavior: 'smooth' });
   };
