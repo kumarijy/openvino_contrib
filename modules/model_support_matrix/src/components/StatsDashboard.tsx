@@ -9,10 +9,11 @@ import {
   CpuChipIcon,
   BoltIcon,
 } from '@heroicons/react/24/outline';
-import type { Stats } from '../types';
+import type { Stats, ModelCategory } from '../types';
 
 interface StatsDashboardProps {
   stats: Stats;
+  onCategoryClick?: (category: ModelCategory) => void;
 }
 
 interface StatCardProps {
@@ -32,7 +33,7 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value, color }) => (
   </div>
 );
 
-export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats }) => {
+export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats, onCategoryClick }) => {
   return (
     <div className="space-y-6">
       {/* Main Stats */}
@@ -87,10 +88,15 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats }) => {
             const colorClass = colors[category] || 'text-gray-600 bg-gray-50';
 
             return (
-              <div key={category} className={`p-4 rounded-lg ${colorClass}`}>
+              <button
+                key={category}
+                onClick={() => onCategoryClick?.(category as ModelCategory)}
+                className={`p-4 rounded-lg ${colorClass} transition-all hover:shadow-md hover:scale-105 cursor-pointer text-left`}
+                aria-label={`Filter by ${category}`}
+              >
                 <div className="text-2xl font-bold mb-1">{count}</div>
                 <div className="text-sm font-medium">{category}</div>
-              </div>
+              </button>
             );
           })}
         </div>

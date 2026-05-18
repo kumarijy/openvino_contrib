@@ -19,7 +19,7 @@ import {
   ExportButton,
   VersionComparison,
 } from './components';
-import type { ViewMode, SortConfig, Model } from './types';
+import type { ViewMode, SortConfig, Model, ModelCategory } from './types';
 
 const App: React.FC = () => {
   const { models, versions, loading, error } = useModelData();
@@ -64,6 +64,13 @@ const App: React.FC = () => {
       field,
       direction: prev.field === field && prev.direction === 'asc' ? 'desc' : 'asc',
     }));
+  };
+
+  const handleCategoryClick = (category: ModelCategory) => {
+    // Toggle the category filter
+    toggleCategory(category);
+    // Scroll to the results
+    window.scrollTo({ top: 400, behavior: 'smooth' });
   };
 
   const filteredModels = useMemo(() => {
@@ -208,7 +215,7 @@ const App: React.FC = () => {
             {/* Statistics Dashboard */}
             {stats && (
               <div className="mb-8">
-                <StatsDashboard stats={stats} />
+                <StatsDashboard stats={stats} onCategoryClick={handleCategoryClick} />
               </div>
             )}
 
