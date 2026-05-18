@@ -15,65 +15,74 @@ import type {
  * Filter models based on filter state
  */
 export function filterModels(models: Model[], filters: FilterState): Model[] {
-  return models.filter((model) => {
-    // Search query filter
-    if (filters.searchQuery) {
-      const query = filters.searchQuery.toLowerCase();
-      const matchesName = model.name.toLowerCase().includes(query);
-      const matchesFamily = model.family.toLowerCase().includes(query);
-      const matchesId = model.id.toLowerCase().includes(query);
-      const matchesTags = model.tags?.some((tag) => tag.toLowerCase().includes(query));
-      const matchesHfId = model.variants.some((v) =>
-        v.huggingfaceId?.toLowerCase().includes(query)
-      );
+  return models
+    .map((model) => {
+      // Search query filter
+      if (filters.searchQuery) {
+        const query = filters.searchQuery.toLowerCase();
+        const matchesName = model.name.toLowerCase().includes(query);
+        const matchesFamily = model.family.toLowerCase().includes(query);
+        const matchesId = model.id.toLowerCase().includes(query);
+        const matchesTags = model.tags?.some((tag) => tag.toLowerCase().includes(query));
+        const matchesHfId = model.variants.some((v) =>
+          v.huggingfaceId?.toLowerCase().includes(query)
+        );
 
-      if (!matchesName && !matchesFamily && !matchesId && !matchesTags && !matchesHfId) {
-        return false;
-      }
-    }
-
-    // Category filter
-    if (filters.selectedCategories.length > 0) {
-      if (!filters.selectedCategories.includes(model.category)) {
-        return false;
-      }
-    }
-
-    // Version and device filters
-    if (filters.selectedVersion !== 'all' || filters.selectedDevices.length > 0) {
-      const hasMatchingVariant = model.variants.some((variant) => {
-        const versionSupport = getVersionSupport(variant.versionSupport, filters.selectedVersion);
-
-        if (!versionSupport || !versionSupport.supported) {
-          return false;
+        if (!matchesName && !matchesFamily && !matchesId && !matchesTags && !matchesHfId) {
+          return null;
         }
+      }
 
-        // Device filter
-        if (filters.selectedDevices.length > 0) {
-          const hasDevice = filters.selectedDevices.some((device) => {
-            const deviceKey = device.toLowerCase() as 'cpu' | 'gpu' | 'npu';
-            return versionSupport.devices[deviceKey];
-          });
-          if (!hasDevice) {
+      // Category filter
+      if (filters.selectedCategories.length > 0) {
+        if (!filters.selectedCategories.includes(model.category)) {
+          return null;
+        }
+      }
+
+      // Filter variants based on version and device filters
+      let filteredVariants = model.variants;
+
+      if (filters.selectedVersion !== 'all' || filters.selectedDevices.length > 0 || filters.loraOnly) {
+        filteredVariants = model.variants.filter((variant) => {
+          const versionSupport = getVersionSupport(variant.versionSupport, filters.selectedVersion);
+
+          if (!versionSupport || !versionSupport.supported) {
             return false;
           }
-        }
 
-        // LoRA filter
-        if (filters.loraOnly && !versionSupport.loraSupport) {
-          return false;
-        }
+          // Device filter
+          if (filters.selectedDevices.length > 0) {
+            const hasDevice = filters.selectedDevices.some((device) => {
+              const deviceKey = device.toLowerCase() as 'cpu' | 'gpu' | 'npu';
+              return versionSupport.devices[deviceKey];
+            });
+            if (!hasDevice) {
+              return false;
+            }
+          }
 
-        return true;
-      });
+          // LoRA filter
+          if (filters.loraOnly && !versionSupport.loraSupport) {
+            return false;
+          }
 
-      if (!hasMatchingVariant) {
-        return false;
+          return true;
+        });
       }
-    }
 
-    return true;
-  });
+      // If no variants match, exclude the model
+      if (filteredVariants.length === 0) {
+        return null;
+      }
+
+      // Return model with filtered variants
+      return {
+        ...model,
+        variants: filteredVariants,
+      };
+    })
+    .filter((model): model is Model => model !== null);
 }
 
 /**
