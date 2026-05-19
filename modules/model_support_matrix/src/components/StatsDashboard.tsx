@@ -75,27 +75,27 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats, onCategor
             if (count === 0) return null;
 
             const colors: Record<string, string> = {
-              'LLM': 'text-blue-600 bg-blue-50',
-              'VLM': 'text-purple-600 bg-purple-50',
-              'Image Generation': 'text-pink-600 bg-pink-50',
-              'Video Generation': 'text-red-600 bg-red-50',
-              'Speech Recognition': 'text-green-600 bg-green-50',
-              'Speech Generation': 'text-teal-600 bg-teal-50',
-              'Text Embeddings': 'text-indigo-600 bg-indigo-50',
-              'Text Rerank': 'text-amber-600 bg-amber-50',
+              'LLM': 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700',
+              'VLM': 'text-purple-600 bg-purple-50 hover:bg-purple-100 hover:text-purple-700',
+              'Image Generation': 'text-pink-600 bg-pink-50 hover:bg-pink-100 hover:text-pink-700',
+              'Video Generation': 'text-red-600 bg-red-50 hover:bg-red-100 hover:text-red-700',
+              'Speech Recognition': 'text-green-600 bg-green-50 hover:bg-green-100 hover:text-green-700',
+              'Speech Generation': 'text-teal-600 bg-teal-50 hover:bg-teal-100 hover:text-teal-700',
+              'Text Embeddings': 'text-indigo-600 bg-indigo-50 hover:bg-indigo-100 hover:text-indigo-700',
+              'Text Rerank': 'text-amber-600 bg-amber-50 hover:bg-amber-100 hover:text-amber-700',
             };
 
-            const colorClass = colors[category] || 'text-gray-600 bg-gray-50';
+            const colorClass = colors[category] || 'text-gray-600 bg-gray-50 hover:bg-gray-100';
 
             return (
               <button
                 key={category}
                 onClick={() => onCategoryClick?.(category as ModelCategory)}
-                className={`p-4 rounded-lg ${colorClass} transition-all hover:shadow-md hover:scale-105 cursor-pointer text-left`}
+                className={`p-4 rounded-lg ${colorClass} transition-all duration-200 hover:shadow-lg hover:scale-110 hover:-translate-y-1 cursor-pointer text-left group`}
                 aria-label={`Filter by ${category}`}
               >
-                <div className="text-2xl font-bold mb-1">{count}</div>
-                <div className="text-sm font-medium">{category}</div>
+                <div className="text-2xl font-bold mb-1 group-hover:text-3xl transition-all duration-200">{count}</div>
+                <div className="text-sm font-medium group-hover:text-base group-hover:font-semibold transition-all duration-200">{category}</div>
               </button>
             );
           })}
