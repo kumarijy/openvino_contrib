@@ -53,16 +53,16 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   onClearFilters,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
-          <FunnelIcon className="h-5 w-5 text-gray-600 mr-2" />
-          <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
+          <FunnelIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 mr-2" />
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
         </div>
         {hasActiveFilters && (
           <button
             onClick={onClearFilters}
-            className="text-sm text-openvino-purple hover:text-openvino-purple/80 flex items-center"
+            className="text-sm text-openvino-purple dark:text-purple-400 hover:text-openvino-purple/80 dark:hover:text-purple-300 flex items-center"
           >
             <XMarkIcon className="h-4 w-4 mr-1" />
             Clear Filters
@@ -72,13 +72,13 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
       {/* Version Filter */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           OpenVINO Version
         </label>
         <select
           value={selectedVersion}
           onChange={(e) => onVersionChange(e.target.value as OpenVINOVersion | 'all')}
-          className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-openvino-purple focus:border-transparent"
+          className="block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-openvino-purple dark:focus:ring-purple-400 focus:border-transparent"
         >
           <option value="all">All Versions</option>
           {versions.map((version) => (
@@ -91,7 +91,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
       {/* Category Filter */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-3">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
           Categories
         </label>
         <div className="space-y-2">

@@ -24,12 +24,12 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ icon, label, value, color }) => (
-  <div className="bg-white rounded-lg shadow p-6">
+  <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6">
     <div className="flex items-center justify-between mb-2">
       <div className={`p-2 rounded-lg ${color}`}>{icon}</div>
     </div>
-    <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
-    <div className="text-sm text-gray-600">{label}</div>
+    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{value}</div>
+    <div className="text-sm text-gray-600 dark:text-gray-400">{label}</div>
   </div>
 );
 
@@ -65,10 +65,10 @@ export const StatsDashboard: React.FC<StatsDashboardProps> = ({ stats, onCategor
       </div>
 
       {/* Category Breakdown */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6">
         <div className="flex items-center mb-4">
-          <RectangleStackIcon className="h-5 w-5 text-gray-600 mr-2" />
-          <h3 className="text-lg font-semibold text-gray-900">Models by Category</h3>
+          <RectangleStackIcon className="h-5 w-5 text-gray-600 dark:text-gray-400 mr-2" />
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Models by Category</h3>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {Object.entries(stats.modelsByCategory).map(([category, count]) => {
