@@ -237,7 +237,7 @@ const App: React.FC = () => {
               onVersionChange={setSelectedVersion}
               categories={categories}
               selectedCategories={filters.selectedCategories}
-              onCategoryToggle={toggleCategory}
+              onCategoryToggle={handleCategoryClick}
               selectedDevices={filters.selectedDevices}
               onDeviceToggle={toggleDevice}
               loraOnly={filters.loraOnly}

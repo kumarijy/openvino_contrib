@@ -123,10 +123,10 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
               <button
                 key={category}
                 onClick={() => onCategoryToggle(category)}
-                className={`w-full text-left px-3 py-2 rounded-lg border text-sm font-medium transition-all ${
+                className={`w-full text-left px-3 py-2 rounded-lg border text-sm font-medium transition-all hover:shadow-md ${
                   isSelected
                     ? colorClass
-                    : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                    : 'bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600'
                 }`}
               >
                 {category}
