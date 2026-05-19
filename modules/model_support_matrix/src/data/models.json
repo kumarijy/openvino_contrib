@@ -11,6 +11,7 @@
     "2025.1",
     "2025.2",
     "2025.3",
+    "2025.4",
     "2026.0",
     "2026.1"
   ],
@@ -136,6 +137,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -272,6 +283,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -434,6 +455,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -561,6 +592,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -724,6 +765,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -851,6 +902,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -996,6 +1057,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -1123,6 +1194,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -1285,6 +1366,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -1412,6 +1503,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -1574,6 +1675,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -1727,6 +1838,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -1863,6 +1984,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -1990,6 +2121,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -2152,6 +2293,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -2279,6 +2430,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -2440,6 +2601,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -2567,6 +2738,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -2729,6 +2910,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -2856,6 +3047,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -3017,6 +3218,16 @@
               "loraSupport": true
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -3144,6 +3355,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -3305,6 +3526,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -3432,6 +3663,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -3577,6 +3818,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -3713,6 +3964,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -3840,6 +4101,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -4002,6 +4273,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -4129,6 +4410,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -4291,6 +4582,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -4435,6 +4736,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
@@ -4597,6 +4908,16 @@
               "loraSupport": false
             },
             {
+              "version": "2025.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2026.0",
               "supported": true,
               "devices": {
@@ -4724,6 +5045,16 @@
             },
             {
               "version": "2025.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": true
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2025.4",
               "supported": true,
               "devices": {
                 "cpu": true,
