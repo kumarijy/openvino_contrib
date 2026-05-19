@@ -1,5 +1,10 @@
 {
   "versions": [
+    "2024.0",
+    "2024.1",
+    "2024.2",
+    "2024.3",
+    "2024.4",
     "2024.5",
     "2025.0",
     "2025.1",
@@ -26,6 +31,56 @@
           "size": "8B",
           "huggingfaceId": "meta-llama/Meta-Llama-3-8B-Instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -82,6 +137,56 @@
           "size": "70B",
           "huggingfaceId": "meta-llama/Meta-Llama-3-70B-Instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -156,6 +261,56 @@
           "huggingfaceId": "meta-llama/Llama-3.2-11B-Vision-Instruct",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -211,6 +366,56 @@
           "size": "90B",
           "huggingfaceId": "meta-llama/Llama-3.2-90B-Vision-Instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -286,6 +491,56 @@
           "huggingfaceId": "Qwen/Qwen2.5-0.5B-Instruct",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -341,6 +596,56 @@
           "size": "7B",
           "huggingfaceId": "Qwen/Qwen2.5-7B-Instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -398,6 +703,56 @@
           "huggingfaceId": "Qwen/Qwen2.5-14B-Instruct",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -453,6 +808,56 @@
           "size": "72B",
           "huggingfaceId": "Qwen/Qwen2.5-72B-Instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -527,6 +932,56 @@
           "huggingfaceId": "microsoft/Phi-3-mini-4k-instruct",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -582,6 +1037,56 @@
           "size": "14B",
           "huggingfaceId": "microsoft/Phi-3-medium-4k-instruct",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -656,6 +1161,56 @@
           "huggingfaceId": "mistralai/Mistral-7B-Instruct-v0.3",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -729,6 +1284,56 @@
           "huggingfaceId": "google/gemma-2-2b-it",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -785,6 +1390,56 @@
           "huggingfaceId": "google/gemma-2-9b-it",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -840,6 +1495,56 @@
           "size": "27B",
           "huggingfaceId": "google/gemma-2-27b-it",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -914,6 +1619,56 @@
           "huggingfaceId": "llava-hf/llava-v1.6-mistral-7b-hf",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -969,6 +1724,56 @@
           "size": "34B",
           "huggingfaceId": "llava-hf/llava-v1.6-34b-hf",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1042,6 +1847,56 @@
           "huggingfaceId": "stabilityai/stable-diffusion-xl-base-1.0",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": true
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1097,6 +1952,56 @@
           "size": "refiner",
           "huggingfaceId": "stabilityai/stable-diffusion-xl-refiner-1.0",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1171,6 +2076,56 @@
           "huggingfaceId": "black-forest-labs/FLUX.1-schnell",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -1226,6 +2181,56 @@
           "size": "dev",
           "huggingfaceId": "black-forest-labs/FLUX.1-dev",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -1299,6 +2304,56 @@
           "huggingfaceId": "THUDM/CogVideoX-2b",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": false,
               "devices": {
@@ -1354,6 +2409,56 @@
           "size": "5B",
           "huggingfaceId": "THUDM/CogVideoX-5b",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": false,
+              "devices": {
+                "cpu": false,
+                "gpu": false,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": false,
@@ -1427,6 +2532,56 @@
           "huggingfaceId": "openai/whisper-tiny",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1482,6 +2637,56 @@
           "size": "base",
           "huggingfaceId": "openai/whisper-base",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1539,6 +2744,56 @@
           "huggingfaceId": "openai/whisper-small",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1595,6 +2850,56 @@
           "huggingfaceId": "openai/whisper-medium",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1650,6 +2955,56 @@
           "size": "large-v3",
           "huggingfaceId": "openai/whisper-large-v3",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1724,6 +3079,56 @@
           "huggingfaceId": "suno/bark-small",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1779,6 +3184,56 @@
           "size": "large",
           "huggingfaceId": "suno/bark",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1853,6 +3308,56 @@
           "huggingfaceId": "BAAI/bge-m3",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -1925,6 +3430,56 @@
           "size": "en-v1.5",
           "huggingfaceId": "BAAI/bge-large-en-v1.5",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
@@ -1999,6 +3554,56 @@
           "huggingfaceId": "BAAI/bge-reranker-base",
           "versionSupport": [
             {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
               "version": "2024.5",
               "supported": true,
               "devices": {
@@ -2054,6 +3659,56 @@
           "size": "large",
           "huggingfaceId": "BAAI/bge-reranker-large",
           "versionSupport": [
+            {
+              "version": "2024.0",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.1",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.2",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.3",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
+            {
+              "version": "2024.4",
+              "supported": true,
+              "devices": {
+                "cpu": true,
+                "gpu": true,
+                "npu": false
+              },
+              "loraSupport": false
+            },
             {
               "version": "2024.5",
               "supported": true,
