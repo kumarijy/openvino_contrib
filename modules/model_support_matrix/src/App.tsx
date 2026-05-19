@@ -129,7 +129,7 @@ const App: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                OpenVINO <span className="text-openvino-purple dark:text-purple-400">GenAI</span> Model Support Matrix
+                Visualize <span className="text-green-500 dark:text-green-400">Any</span> OpenVINO <span className="text-green-500 dark:text-green-400">GenAI</span> Model
               </h1>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 Track AI model support across OpenVINO releases • Version {filters.selectedVersion}
