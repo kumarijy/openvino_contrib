@@ -138,7 +138,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
       {/* Device Filter */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-3">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">
           Device Support
         </label>
         <div className="flex gap-2">
@@ -171,7 +171,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
             onChange={(e) => onLoraToggle(e.target.checked)}
             className="w-4 h-4 text-openvino-purple border-gray-300 rounded focus:ring-openvino-purple"
           />
-          <span className="ml-2 text-sm text-gray-700">
+          <span className="ml-2 text-sm text-gray-700 dark:text-gray-200">
             LoRA Support Only
           </span>
         </label>

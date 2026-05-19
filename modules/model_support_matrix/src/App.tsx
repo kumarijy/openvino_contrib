@@ -253,13 +253,13 @@ const App: React.FC = () => {
             <SearchBar value={filters.searchQuery} onChange={setSearchQuery} />
 
             {/* Results Count */}
-            <div className="flex items-center justify-between text-sm text-gray-600">
+            <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
               <span>
-                Showing <span className="font-semibold">{filteredModels.length}</span> of{' '}
-                <span className="font-semibold">{models.length}</span> models
+                Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredModels.length}</span> of{' '}
+                <span className="font-semibold text-gray-900 dark:text-white">{models.length}</span> models
               </span>
               {hasActiveFilters && (
-                <span className="text-openvino-purple">Active filters applied</span>
+                <span className="text-openvino-purple dark:text-purple-400">Active filters applied</span>
               )}
             </div>
 
