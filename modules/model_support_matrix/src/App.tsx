@@ -18,6 +18,7 @@ import {
   ModelDetailModal,
   ExportButton,
   VersionComparison,
+  DarkModeToggle,
 } from './components';
 import type { ViewMode, SortConfig, Model, ModelCategory } from './types';
 
@@ -121,20 +122,21 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
-              <h1 className="text-3xl font-bold text-gray-900">
-                OpenVINO <span className="text-openvino-purple">GenAI</span> Model Support Matrix
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+                OpenVINO <span className="text-openvino-purple dark:text-purple-400">GenAI</span> Model Support Matrix
               </h1>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 Track AI model support across OpenVINO releases • Version {filters.selectedVersion}
               </p>
             </div>
             <div className="flex items-center space-x-3">
+              <DarkModeToggle />
               <button
                 onClick={() => setShowComparison(!showComparison)}
                 className={`px-4 py-2 text-sm font-medium rounded-lg border transition-colors ${

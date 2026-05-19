@@ -11,3 +11,4 @@ export { ViewToggle } from './ViewToggle';
 export { ModelDetailModal } from './ModelDetailModal';
 export { ExportButton } from './ExportButton';
 export { VersionComparison } from './VersionComparison';
+export { DarkModeToggle } from './DarkModeToggle';
