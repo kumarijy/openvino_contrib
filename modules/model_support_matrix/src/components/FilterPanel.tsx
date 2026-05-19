@@ -81,11 +81,31 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           className="block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-openvino-purple dark:focus:ring-purple-400 focus:border-transparent"
         >
           <option value="all">All Versions</option>
-          {versions.map((version) => (
-            <option key={version} value={version}>
-              {version}
-            </option>
-          ))}
+
+          {/* Group versions by year */}
+          <optgroup label="2024 Releases">
+            {versions.filter(v => v.startsWith('2024')).map((version) => (
+              <option key={version} value={version}>
+                {version}
+              </option>
+            ))}
+          </optgroup>
+
+          <optgroup label="2025 Releases">
+            {versions.filter(v => v.startsWith('2025')).map((version) => (
+              <option key={version} value={version}>
+                {version}
+              </option>
+            ))}
+          </optgroup>
+
+          <optgroup label="2026 Releases">
+            {versions.filter(v => v.startsWith('2026')).map((version) => (
+              <option key={version} value={version}>
+                {version}
+              </option>
+            ))}
+          </optgroup>
         </select>
       </div>
 
