@@ -6,17 +6,48 @@
 [![React](https://img.shields.io/badge/React-18.2-61dafb.svg)](https://react.dev/)
 [![Build Status](https://img.shields.io/badge/build-passing-success.svg)](https://github.com/kumarijy/openvino_contrib)
 
-An interactive web application for tracking AI model support across OpenVINO GenAI releases.
+A comprehensive web application showcasing OpenVINO model resources including GenAI models, Open Model Zoo (Intel & Public models), and model performance benchmarks.
 
 **🌐 Live Demo**: https://kumarijy.github.io/openvino_contrib/
 
 ## Overview
 
-This tool provides a comprehensive view of all AI models supported by OpenVINO GenAI, organized by:
+This tool provides centralized access to multiple OpenVINO model resources:
+
+### 1. **OpenVINO GenAI Model Support Matrix**
+Track AI model support across OpenVINO GenAI releases:
 - **Model Categories**: LLMs, VLMs, Image Generation, Video Generation, Speech Recognition, Speech Generation, Text Embeddings, Text Rerank
-- **OpenVINO Versions**: Track which models are available in different releases
-- **Device Support**: See which models run on CPU, GPU, and NPU
-- **LoRA Support**: Identify models with LoRA adapter support
+- **OpenVINO Versions**: 14 versions tracked (2024.0 - 2026.0)
+- **Device Support**: CPU, GPU, and NPU compatibility
+- **LoRA Support**: Adapter support indicators
+- **Version Comparison**: Side-by-side version analysis
+
+### 2. **Open Model Zoo - Intel Models**
+129 Intel-optimized pre-trained models categorized by task:
+- Face Detection & Recognition
+- Person Detection & Re-Identification
+- Object Detection
+- Segmentation Models
+- Human Pose Estimation
+- Text Detection & Recognition
+- Action Recognition
+- NLP Models
+- And more...
+
+### 3. **Open Model Zoo - Public Models**
+111 community models organized into categories:
+- Classification Models
+- Object Detection Models
+- Segmentation Models
+- Speech Recognition Models
+- Depth Estimation Models
+- Style Transfer Models
+- And more...
+
+### 4. **Coming Soon**
+- OpenVINO Model Hub for AI Inference Benchmarks
+- AI Models Verified for OpenVINO
+- OVVP (OpenVINO Validation Program)
 
 ## Features
 
@@ -27,14 +58,38 @@ This tool provides a comprehensive view of all AI models supported by OpenVINO G
 - ✅ **Phase 5 (Complete)**: Full data population and testing
 - ✅ **Phase 6 (Complete)**: Production deployment and documentation
 
-**🎉 Version 1.0.0 - Production Ready!**
+**🎉 Version 2.0.0 - Multi-Resource Hub!**
 
 ### Core Features
+
+#### Landing Page
+- **Resource Cards**: Navigate to different OpenVINO model resources
+- **Dark Mode**: System-aware dark mode with manual toggle
+- **Request Model**: Direct link to Jira for model support requests
+
+#### GenAI Model Support Matrix
+- **Variant-Level Tracking**: Accurate counting of model variants (33 variants across 15 models)
 - **Real-time Search**: Search models by name, family, or HuggingFace ID
-- **Multi-level Filtering**: Filter by version, category, and device support
-- **Version Comparison**: Side-by-side comparison of model support across releases
-- **Dual View Modes**: Table view for detailed information, card view for browsing
+- **Multi-level Filtering**: Filter by version, category, device support, and LoRA
+- **Exclusive Category Selection**: Click category cards or filter buttons for focused browsing
+- **Version Comparison**: Side-by-side comparison across 14 OpenVINO releases
+- **Dual View Modes**: Table and card views for all model listings
+- **Export Options**: JSON, CSV, and shareable URLs
+
+#### Open Model Zoo Integration
+- **Intel Models (129)**: Browse by category with detailed GitHub links
+- **Public Models (111)**: Community models parsed from official GitHub index
+- **Category Navigation**: Click category cards to view models in that category
+- **Search & Filter**: Find models quickly with real-time search
+- **Table/Card Views**: Toggle between compact table and visual card layouts
+- **Accurate Categorization**: Matches official GitHub Open Model Zoo structure
+
+#### UI/UX Enhancements
+- **Green Theme**: HuggingFace-style green accents for category filters
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Year-Grouped Versions**: Organized version dropdown (2024, 2025, 2026)
+- **Improved Contrast**: Better text visibility in dark mode
+- **Smooth Navigation**: Back buttons and intuitive page flow
 
 ## Technology Stack
 
@@ -175,13 +230,22 @@ npm run build
 
 ## Project Stats
 
+### GenAI Models
 - **Models**: 15 across 8 categories
 - **Variants**: 33 model variants
-- **Versions**: 4 OpenVINO releases tracked
-- **Components**: 13 React components
-- **Bundle Size**: 226 KB (production)
-- **Build Time**: ~6 seconds
+- **Versions**: 14 OpenVINO releases tracked (2024.0 - 2026.0)
+
+### Open Model Zoo
+- **Intel Models**: 129 pre-trained models
+- **Public Models**: 111 community models
+- **Categories**: 25+ model categories combined
+
+### Technical
+- **Components**: 22 React components
+- **Bundle Size**: ~1.5 MB (production, with all features)
+- **Build Time**: ~6-8 seconds
 - **Type Safety**: 100% TypeScript
+- **Pages**: 7+ navigable pages
 
 ## Browser Support
 
@@ -217,9 +281,55 @@ Part of the [OpenVINO Toolkit](https://github.com/openvinotoolkit) ecosystem.
 
 ---
 
-**Status**: ✅ Production Ready (v1.0.0)  
-**Last Updated**: 2026-05-14  
+**Status**: ✅ Production Ready (v2.0.0)  
+**Last Updated**: 2026-05-21  
 **Maintained by**: [@kumarijy](https://github.com/kumarijy)
+
+## Version 2.0.0 Release Notes
+
+### Major New Features
+
+#### Multi-Page Architecture
+- **Landing Page**: Central hub for accessing all OpenVINO model resources
+- **Open Model Zoo Pages**: Dedicated Intel and Public model browsers
+- **Category Sub-Pages**: Drill down into specific model categories
+- **Smooth Navigation**: Intuitive back buttons and page transitions
+
+#### Open Model Zoo Integration (NEW)
+- **Intel Models**: 129 models fetched from official GitHub index
+  - Automatic categorization by model type
+  - Direct links to GitHub documentation
+  - Search and filter capabilities
+  - Table and card view options
+
+- **Public Models**: 111 models parsed from GitHub markdown tables
+  - Accurate category matching with official structure
+  - Browse by category cards
+  - Detailed model information
+
+#### Enhanced UI/UX
+- **Dark Mode**: Full dark mode support with system detection and manual toggle
+- **Green Theme**: HuggingFace-inspired green color scheme for filters
+- **Request Model**: Integrated Jira link for model support requests
+- **Improved Categorization**: Better model grouping and organization
+- **Variant Counting**: Accurate statistics at variant level (not just parent models)
+
+#### GenAI Matrix Improvements
+- **Exclusive Category Selection**: One category at a time for focused browsing
+- **Year-Grouped Versions**: Dropdown organized by release year
+- **Better Dark Mode Contrast**: Improved text visibility
+- **Clickable Category Cards**: Dashboard cards now filter results
+- **14 OpenVINO Versions**: Complete history from 2024.0 to 2026.0
+
+### Technical Improvements
+- Modular component architecture with sub-pages
+- Dynamic GitHub data fetching and parsing
+- Improved state management for multi-page navigation
+- Better TypeScript typing across all components
+- Optimized rendering with proper categorization logic
+
+### Breaking Changes
+None - fully backwards compatible with existing deployments
 
 ## Current Model Coverage
 
