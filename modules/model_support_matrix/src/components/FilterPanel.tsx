@@ -22,14 +22,14 @@ interface FilterPanelProps {
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
-  'LLM': 'bg-blue-100 text-blue-800 border-blue-200',
-  'VLM': 'bg-purple-100 text-purple-800 border-purple-200',
-  'Image Generation': 'bg-pink-100 text-pink-800 border-pink-200',
-  'Video Generation': 'bg-red-100 text-red-800 border-red-200',
-  'Speech Recognition': 'bg-green-100 text-green-800 border-green-200',
-  'Speech Generation': 'bg-teal-100 text-teal-800 border-teal-200',
-  'Text Embeddings': 'bg-indigo-100 text-indigo-800 border-indigo-200',
-  'Text Rerank': 'bg-amber-100 text-amber-800 border-amber-200',
+  'LLM': 'bg-green-100 text-green-800 border-green-200 dark:bg-green-900 dark:text-green-300 dark:border-green-700',
+  'VLM': 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900 dark:text-emerald-300 dark:border-emerald-700',
+  'Image Generation': 'bg-lime-100 text-lime-800 border-lime-200 dark:bg-lime-900 dark:text-lime-300 dark:border-lime-700',
+  'Video Generation': 'bg-teal-100 text-teal-800 border-teal-200 dark:bg-teal-900 dark:text-teal-300 dark:border-teal-700',
+  'Speech Recognition': 'bg-green-100 text-green-700 border-green-200 dark:bg-green-900 dark:text-green-400 dark:border-green-700',
+  'Speech Generation': 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900 dark:text-emerald-400 dark:border-emerald-700',
+  'Text Embeddings': 'bg-lime-100 text-lime-700 border-lime-200 dark:bg-lime-900 dark:text-lime-400 dark:border-lime-700',
+  'Text Rerank': 'bg-teal-100 text-teal-700 border-teal-200 dark:bg-teal-900 dark:text-teal-400 dark:border-teal-700',
 };
 
 const DEVICE_ICONS: Record<DeviceType, string> = {
@@ -126,7 +126,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
                 className={`w-full text-left px-3 py-2 rounded-lg border text-sm font-medium transition-all hover:shadow-md ${
                   isSelected
                     ? colorClass
-                    : 'bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600'
+                    : 'bg-green-50 dark:bg-green-950 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800 hover:bg-green-100 dark:hover:bg-green-900 hover:text-green-700 dark:hover:text-green-300'
                 }`}
               >
                 {category}

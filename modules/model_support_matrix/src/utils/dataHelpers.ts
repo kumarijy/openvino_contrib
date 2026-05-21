@@ -143,24 +143,17 @@ export function calculateStats(models: Model[], version: OpenVINOVersion): Stats
   let totalModels = 0;
 
   models.forEach((model) => {
-    const hasSupport = model.variants.some((variant) => {
+    model.variants.forEach((variant) => {
       const vs = getVersionSupport(variant.versionSupport, version);
-      return vs && vs.supported;
+      if (vs && vs.supported) {
+        totalModels++;
+        modelsByCategory[model.category]++;
+
+        if (vs.devices.cpu) cpuCount++;
+        if (vs.devices.gpu) gpuCount++;
+        if (vs.devices.npu) npuCount++;
+      }
     });
-
-    if (hasSupport) {
-      totalModels++;
-      modelsByCategory[model.category]++;
-
-      model.variants.forEach((variant) => {
-        const vs = getVersionSupport(variant.versionSupport, version);
-        if (vs && vs.supported) {
-          if (vs.devices.cpu) cpuCount++;
-          if (vs.devices.gpu) gpuCount++;
-          if (vs.devices.npu) npuCount++;
-        }
-      });
-    }
   });
 
   return {

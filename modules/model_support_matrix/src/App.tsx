@@ -19,6 +19,10 @@ import {
   ExportButton,
   VersionComparison,
   DarkModeToggle,
+  LandingPage,
+  OpenModelZooPage,
+  IntelModelsPage,
+  PublicModelsPage,
 } from './components';
 import type { ViewMode, SortConfig, Model, ModelCategory } from './types';
 
@@ -37,6 +41,7 @@ const App: React.FC = () => {
     hasActiveFilters,
   } = useFilters(latestVersion);
 
+  const [currentPage, setCurrentPage] = useState<'landing' | 'matrix' | 'openModelZoo' | 'intelModels' | 'publicModels'>('landing');
   const [viewMode, setViewMode] = useState<ViewMode>('table');
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     field: 'name',
@@ -121,6 +126,34 @@ const App: React.FC = () => {
     );
   }
 
+  // Page routing
+  if (currentPage === 'landing') {
+    return (
+      <LandingPage
+        onNavigateToMatrix={() => setCurrentPage('matrix')}
+        onNavigateToOpenModelZoo={() => setCurrentPage('openModelZoo')}
+      />
+    );
+  }
+
+  if (currentPage === 'openModelZoo') {
+    return (
+      <OpenModelZooPage
+        onNavigateBack={() => setCurrentPage('landing')}
+        onNavigateToIntel={() => setCurrentPage('intelModels')}
+        onNavigateToPublic={() => setCurrentPage('publicModels')}
+      />
+    );
+  }
+
+  if (currentPage === 'intelModels') {
+    return <IntelModelsPage onNavigateBack={() => setCurrentPage('openModelZoo')} />;
+  }
+
+  if (currentPage === 'publicModels') {
+    return <PublicModelsPage onNavigateBack={() => setCurrentPage('openModelZoo')} />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       {/* Header */}
@@ -128,6 +161,12 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
+              <button
+                onClick={() => setCurrentPage('landing')}
+                className="text-sm text-openvino-purple dark:text-purple-400 hover:underline mb-2 flex items-center"
+              >
+                ← Back to Resources
+              </button>
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                 OpenVINO <span className="text-openvino-purple dark:text-purple-400">GenAI</span> Model Support Matrix
               </h1>
@@ -137,6 +176,14 @@ const App: React.FC = () => {
             </div>
             <div className="flex items-center space-x-3">
               <DarkModeToggle />
+              <a
+                href="https://jira.devtools.intel.com/secure/CreateIssue.jspa?pid=16990&issuetype=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 text-sm font-medium rounded-lg border border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900 dark:text-green-300 dark:border-green-700 dark:hover:bg-green-800 transition-colors flex items-center"
+              >
+                <span className="mr-1">➕</span> Request Model
+              </a>
               <button
                 onClick={() => setShowComparison(!showComparison)}
                 className={`px-4 py-2 text-sm font-medium rounded-lg border transition-colors ${
@@ -255,8 +302,8 @@ const App: React.FC = () => {
             {/* Results Count */}
             <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
               <span>
-                Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredModels.length}</span> of{' '}
-                <span className="font-semibold text-gray-900 dark:text-white">{models.length}</span> models
+                Showing <span className="font-semibold text-gray-900 dark:text-white">{filteredModels.reduce((sum, m) => sum + m.variants.length, 0)}</span> of{' '}
+                <span className="font-semibold text-gray-900 dark:text-white">{models.reduce((sum, m) => sum + m.variants.length, 0)}</span> variants
               </span>
               {hasActiveFilters && (
                 <span className="text-openvino-purple dark:text-purple-400">Active filters applied</span>
