@@ -20,9 +20,9 @@ import {
   VersionComparison,
   DarkModeToggle,
   LandingPage,
-  OpenModelZooPage,
-  IntelModelsPage,
-  PublicModelsPage,
+  ModelHubPage,
+  VerifiedModelsPage,
+  OVVPPage,
 } from './components';
 import type { ViewMode, SortConfig, Model, ModelCategory } from './types';
 
@@ -41,7 +41,7 @@ const App: React.FC = () => {
     hasActiveFilters,
   } = useFilters(latestVersion);
 
-  const [currentPage, setCurrentPage] = useState<'landing' | 'matrix' | 'openModelZoo' | 'intelModels' | 'publicModels'>('landing');
+  const [currentPage, setCurrentPage] = useState<'landing' | 'matrix' | 'modelHub' | 'verifiedModels' | 'ovvp'>('landing');
   const [viewMode, setViewMode] = useState<ViewMode>('table');
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     field: 'name',
@@ -131,27 +131,23 @@ const App: React.FC = () => {
     return (
       <LandingPage
         onNavigateToMatrix={() => setCurrentPage('matrix')}
-        onNavigateToOpenModelZoo={() => setCurrentPage('openModelZoo')}
+        onNavigateToModelHub={() => setCurrentPage('modelHub')}
+        onNavigateToVerifiedModels={() => setCurrentPage('verifiedModels')}
+        onNavigateToOVVP={() => setCurrentPage('ovvp')}
       />
     );
   }
 
-  if (currentPage === 'openModelZoo') {
-    return (
-      <OpenModelZooPage
-        onNavigateBack={() => setCurrentPage('landing')}
-        onNavigateToIntel={() => setCurrentPage('intelModels')}
-        onNavigateToPublic={() => setCurrentPage('publicModels')}
-      />
-    );
+  if (currentPage === 'modelHub') {
+    return <ModelHubPage onNavigateBack={() => setCurrentPage('landing')} />;
   }
 
-  if (currentPage === 'intelModels') {
-    return <IntelModelsPage onNavigateBack={() => setCurrentPage('openModelZoo')} />;
+  if (currentPage === 'verifiedModels') {
+    return <VerifiedModelsPage onNavigateBack={() => setCurrentPage('landing')} />;
   }
 
-  if (currentPage === 'publicModels') {
-    return <PublicModelsPage onNavigateBack={() => setCurrentPage('openModelZoo')} />;
+  if (currentPage === 'ovvp') {
+    return <OVVPPage onNavigateBack={() => setCurrentPage('landing')} />;
   }
 
   return (

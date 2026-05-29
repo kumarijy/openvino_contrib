@@ -4,7 +4,6 @@
 
 import React from 'react';
 import {
-  CubeIcon,
   ChartBarIcon,
   CheckBadgeIcon,
   RocketLaunchIcon,
@@ -14,7 +13,9 @@ import { DarkModeToggle } from './DarkModeToggle';
 
 interface LandingPageProps {
   onNavigateToMatrix: () => void;
-  onNavigateToOpenModelZoo: () => void;
+  onNavigateToModelHub: () => void;
+  onNavigateToVerifiedModels: () => void;
+  onNavigateToOVVP: () => void;
 }
 
 interface CardProps {
@@ -69,7 +70,7 @@ const Card: React.FC<CardProps> = ({ title, description, icon, iconColor, onClic
   );
 };
 
-export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, onNavigateToOpenModelZoo }) => {
+export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, onNavigateToModelHub, onNavigateToVerifiedModels, onNavigateToOVVP }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       {/* Header with actions */}
@@ -109,40 +110,31 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
             onClick={onNavigateToMatrix}
           />
 
-          {/* Card 2: Open Model Zoo */}
-          <Card
-            title="Open Model Zoo"
-            description="Pre-trained deep learning models and demo applications for computer vision, NLP, and more."
-            icon={<CubeIcon className="h-8 w-8 text-white" />}
-            iconColor="bg-gradient-to-br from-blue-500 to-blue-700"
-            onClick={onNavigateToOpenModelZoo}
-          />
-
-          {/* Card 3: OpenVINO Model Hub for AI Inference Benchmarks */}
+          {/* Card 2: OpenVINO Model Hub for AI Inference Benchmarks */}
           <Card
             title="OpenVINO Model Hub for AI Inference Benchmarks"
-            description="Performance benchmarks and optimization metrics for AI models running on OpenVINO across different hardware."
+            description="60+ AI models verified and optimized for OpenVINO inference across computer vision, NLP, and generative AI tasks."
             icon={<ChartBarIcon className="h-8 w-8 text-white" />}
             iconColor="bg-gradient-to-br from-green-500 to-green-700"
-            isComingSoon={true}
+            onClick={onNavigateToModelHub}
           />
 
-          {/* Card 4: AI Models Verified for OpenVINO */}
+          {/* Card 3: AI Models Verified for OpenVINO */}
           <Card
             title="AI Models Verified for OpenVINO"
-            description="Curated collection of AI models that have been tested and verified for optimal performance with OpenVINO."
+            description="Models that run on Intel® Core Ultra™ Processors - tested and verified for optimal performance with OpenVINO."
             icon={<CheckBadgeIcon className="h-8 w-8 text-white" />}
             iconColor="bg-gradient-to-br from-teal-500 to-teal-700"
-            isComingSoon={true}
+            onClick={onNavigateToVerifiedModels}
           />
 
-          {/* Card 5: OVVP */}
+          {/* Card 4: OVVP */}
           <Card
             title="OVVP"
             description="OpenVINO Validation Program - ensuring model compatibility and performance standards across the ecosystem."
             icon={<RocketLaunchIcon className="h-8 w-8 text-white" />}
             iconColor="bg-gradient-to-br from-indigo-500 to-indigo-700"
-            isComingSoon={true}
+            onClick={onNavigateToOVVP}
           />
         </div>
 
