@@ -254,63 +254,45 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
           </div>
 
           {/* Framework and Precision Filters */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-4">
             {/* Framework Filter */}
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Framework:</span>
-              <button
-                onClick={() => setSelectedFramework(null)}
-                className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                  selectedFramework === null
-                    ? 'bg-openvino-purple text-white'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+              <label htmlFor="framework-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Framework:
+              </label>
+              <select
+                id="framework-filter"
+                value={selectedFramework || ''}
+                onChange={(e) => setSelectedFramework(e.target.value || null)}
+                className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-openvino-purple focus:border-transparent text-gray-900 dark:text-white"
               >
-                All
-              </button>
-              {frameworks.map((framework) => (
-                <button
-                  key={framework}
-                  onClick={() => setSelectedFramework(framework)}
-                  className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                    selectedFramework === framework
-                      ? 'bg-openvino-purple text-white'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  {framework}
-                </button>
-              ))}
+                <option value="">All Frameworks</option>
+                {frameworks.map((framework) => (
+                  <option key={framework} value={framework}>
+                    {framework}
+                  </option>
+                ))}
+              </select>
             </div>
-
-            <div className="h-8 w-px bg-gray-300 dark:bg-gray-600" />
 
             {/* Precision Filter */}
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Precision:</span>
-              <button
-                onClick={() => setSelectedPrecision(null)}
-                className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                  selectedPrecision === null
-                    ? 'bg-openvino-purple text-white'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+              <label htmlFor="precision-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Precision:
+              </label>
+              <select
+                id="precision-filter"
+                value={selectedPrecision || ''}
+                onChange={(e) => setSelectedPrecision(e.target.value || null)}
+                className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-openvino-purple focus:border-transparent text-gray-900 dark:text-white"
               >
-                All
-              </button>
-              {precisions.map((precision) => (
-                <button
-                  key={precision}
-                  onClick={() => setSelectedPrecision(precision)}
-                  className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                    selectedPrecision === precision
-                      ? 'bg-openvino-purple text-white'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  {precision}
-                </button>
-              ))}
+                <option value="">All Precisions</option>
+                {precisions.map((precision) => (
+                  <option key={precision} value={precision}>
+                    {precision}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
