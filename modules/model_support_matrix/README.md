@@ -6,7 +6,7 @@
 [![React](https://img.shields.io/badge/React-18.2-61dafb.svg)](https://react.dev/)
 [![Build Status](https://img.shields.io/badge/build-passing-success.svg)](https://github.com/kumarijy/openvino_contrib)
 
-A comprehensive web application showcasing OpenVINO model resources including GenAI models, Model Hub benchmarks, Verified models, Open Model Zoo (Intel & Public models), and OVVP validated topologies - featuring over 2,400 models across 6 resource categories.
+A comprehensive web application showcasing OpenVINO model resources including GenAI models, Model Hub benchmarks, Verified models, and OVVP validated topologies - featuring over 2,200 models across 4 resource categories.
 
 **🌐 Live Demo**: https://kumarijy.github.io/openvino_contrib/
 
@@ -22,42 +22,20 @@ Track AI model support across OpenVINO GenAI releases:
 - **LoRA Support**: Adapter support indicators
 - **Version Comparison**: Side-by-side version analysis
 
-### 2. **Open Model Zoo - Intel Models**
-129 Intel-optimized pre-trained models categorized by task:
-- Face Detection & Recognition
-- Person Detection & Re-Identification
-- Object Detection
-- Segmentation Models
-- Human Pose Estimation
-- Text Detection & Recognition
-- Action Recognition
-- NLP Models
-- And more...
-
-### 3. **Open Model Zoo - Public Models**
-111 community models organized into categories:
-- Classification Models
-- Object Detection Models
-- Segmentation Models
-- Speech Recognition Models
-- Depth Estimation Models
-- Style Transfer Models
-- And more...
-
-### 4. **OpenVINO Model Hub for AI Inference Benchmarks**
+### 2. **OpenVINO Model Hub for AI Inference Benchmarks**
 60+ AI models verified and optimized for OpenVINO inference:
 - LLM Models (11): BERT, DeepSeek, GPT, Llama, Mistral, Phi, Qwen
 - Vision Models (5): Detectron-v2, MobileNetV2, ResNet-50, SSD, YOLO11
 - Multimodal Models (4): FLUX-1, Gemma3, MiniCPM-V, Qwen2.5-VL
 - Diffusion Models (1): StableDiffusion-V1-5
 
-### 5. **AI Models Verified for OpenVINO**
+### 3. **AI Models Verified for OpenVINO**
 1,877+ models tested and verified for Intel® Core Ultra™ Processors:
 - Grouped by model families
 - Optimized performance metrics
 - Full compatibility verification
 
-### 6. **OVVP (OpenVINO Validation Program)**
+### 4. **OVVP (OpenVINO Validation Program)**
 291 validated model topologies with 738 variants:
 - **Frameworks**: TF, TF2, ONNX
 - **Precisions**: FP16, FP32, INT8, INT1
@@ -98,16 +76,20 @@ Track AI model support across OpenVINO GenAI releases:
 - **Dual View Modes**: Table and card views for all model listings
 - **Export Options**: JSON, CSV, and shareable URLs
 
-#### Open Model Zoo Integration
-- **Intel Models (129)**: Browse by category with detailed GitHub links
-- **Public Models (111)**: Community models parsed from official GitHub index
-- **Category Navigation**: Click category cards to view models in that category
-- **Search & Filter**: Find models quickly with real-time search
+#### Model Hub & Verified Models
+- **Model Hub**: 60+ optimized models with search and category filtering
+- **Verified Models**: 1,877+ verified models grouped by families
 - **Table/Card Views**: Toggle between compact table and visual card layouts
-- **Accurate Categorization**: Matches official GitHub Open Model Zoo structure
+- **Real-time Search**: Find models quickly across all categories
+
+#### OVVP Integration
+- **291 Model Topologies**: 738 framework/precision variants
+- **Dynamic Data**: Fetches latest validated models from GitHub
+- **Dropdown Filters**: Clean framework and precision selection
+- **Variant Tracking**: See all deployment options per model
 
 #### UI/UX Enhancements
-- **Green Theme**: HuggingFace-style green accents for category filters
+- **Dark Mode**: Full dark mode support with system detection
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
 - **Year-Grouped Versions**: Organized version dropdown (2024, 2025, 2026)
 - **Improved Contrast**: Better text visibility in dark mode
@@ -257,11 +239,6 @@ npm run build
 - **Variants**: 33 model variants
 - **Versions**: 14 OpenVINO releases tracked (2024.0 - 2026.0)
 
-### Open Model Zoo
-- **Intel Models**: 129 pre-trained models
-- **Public Models**: 111 community models
-- **Categories**: 25+ model categories combined
-
 ### Model Hub
 - **Models**: 60+ optimized models
 - **Categories**: LLM, Vision, Multimodal, Diffusion
@@ -329,25 +306,30 @@ Part of the [OpenVINO Toolkit](https://github.com/openvinotoolkit) ecosystem.
 
 #### Multi-Page Architecture
 - **Landing Page**: Central hub for accessing all OpenVINO model resources
-- **Open Model Zoo Pages**: Dedicated Intel and Public model browsers
-- **Category Sub-Pages**: Drill down into specific model categories
+- **Model Hub Page**: 60+ optimized models for AI inference benchmarks
+- **Verified Models Page**: 1,877+ verified models for Intel® Core Ultra™ Processors
+- **OVVP Page**: 291 validated model topologies with 738 variants
 - **Smooth Navigation**: Intuitive back buttons and page transitions
 
-#### Open Model Zoo Integration (NEW)
-- **Intel Models**: 129 models fetched from official GitHub index
-  - Automatic categorization by model type
-  - Direct links to GitHub documentation
-  - Search and filter capabilities
+#### Model Resources Integration (NEW)
+- **Model Hub**: Optimized models with LLM, Vision, Multimodal, and Diffusion categories
+  - Search and category filtering
   - Table and card view options
+  - Framework and precision badges
 
-- **Public Models**: 111 models parsed from GitHub markdown tables
-  - Accurate category matching with official structure
-  - Browse by category cards
-  - Detailed model information
+- **Verified Models**: Grouped by model families
+  - 1,877+ models verified for Core Ultra™ Processors
+  - Comprehensive compatibility verification
+  - Clean card-based layout
+
+- **OVVP**: Dynamic GitHub data fetching
+  - 291 topologies, 738 framework/precision variants
+  - Dropdown filters for framework and precision
+  - Detailed variant explanations
 
 #### Enhanced UI/UX
 - **Dark Mode**: Full dark mode support with system detection and manual toggle
-- **Green Theme**: HuggingFace-inspired green color scheme for filters
+- **Dropdown Filters**: Clean, professional filter interface for OVVP
 - **Request Model**: Integrated Jira link for model support requests
 - **Improved Categorization**: Better model grouping and organization
 - **Variant Counting**: Accurate statistics at variant level (not just parent models)
@@ -360,11 +342,12 @@ Part of the [OpenVINO Toolkit](https://github.com/openvinotoolkit) ecosystem.
 - **14 OpenVINO Versions**: Complete history from 2024.0 to 2026.0
 
 ### Technical Improvements
-- Modular component architecture with sub-pages
-- Dynamic GitHub data fetching and parsing
+- Modular component architecture with 4 resource pages
+- Dynamic GitHub data fetching for OVVP models
 - Improved state management for multi-page navigation
 - Better TypeScript typing across all components
 - Optimized rendering with proper categorization logic
+- JSON data handling for verified models (1,877+ models)
 
 ### Breaking Changes
 None - fully backwards compatible with existing deployments
