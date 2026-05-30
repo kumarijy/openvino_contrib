@@ -1,11 +1,11 @@
 /**
  * OVVPPage - OpenVINO Validation Program
  * Displays validated models from the OVVP dataset
+ * Fetches data dynamically from GitHub
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowLeftIcon, TableCellsIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
-import ovvpData from '../data/ovvp_models.json';
 
 interface OVVPPageProps {
   onNavigateBack: () => void;
@@ -24,16 +24,58 @@ interface TopologyModel {
   tags?: string[];
 }
 
+interface OVVPData {
+  metadata: {
+    version?: string;
+    info?: string;
+    tags?: string[];
+  };
+  scope: TopologyModel[];
+}
+
 export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
   const [selectedPrecision, setSelectedPrecision] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
 
+  // State for data fetching
+  const [ovvpData, setOvvpData] = useState<OVVPData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch OVVP data from GitHub
+  useEffect(() => {
+    const fetchOVVPData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch(
+          'https://raw.githubusercontent.com/kumarijy/openvino_contrib/master/modules/model_support_matrix/src/data/ovvp_models.json'
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch OVVP data: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        setOvvpData(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load OVVP data');
+        console.error('Error fetching OVVP data:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchOVVPData();
+  }, []);
+
   // Parse OVVP data
   const models = useMemo(() => {
-    return (ovvpData.scope as TopologyModel[]) || [];
-  }, []);
+    return ovvpData?.scope || [];
+  }, [ovvpData]);
 
   // Get unique frameworks and precisions
   const frameworks = useMemo(() => {
@@ -93,6 +135,59 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
     return count;
   };
 
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-openvino-purple mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading OVVP data from GitHub...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <button
+              onClick={onNavigateBack}
+              className="mb-4 flex items-center text-openvino-purple dark:text-purple-400 hover:underline"
+            >
+              <ArrowLeftIcon className="h-5 w-5 mr-2" />
+              Back to Resources
+            </button>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              OpenVINO Validation Program (OVVP)
+            </h1>
+          </div>
+        </header>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 text-center">
+            <div className="text-red-500 text-5xl mb-4">⚠️</div>
+            <h3 className="text-lg font-medium text-red-900 dark:text-red-200 mb-2">Failed to Load OVVP Data</h3>
+            <p className="text-red-700 dark:text-red-300 mb-4">{error}</p>
+            <p className="text-sm text-red-600 dark:text-red-400 mb-4">
+              Make sure the data file exists at:<br />
+              <code className="bg-red-100 dark:bg-red-900 px-2 py-1 rounded text-xs">
+                https://github.com/kumarijy/openvino_contrib/blob/master/modules/model_support_matrix/src/data/ovvp_models.json
+              </code>
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 bg-openvino-purple text-white rounded-lg hover:bg-opacity-90"
+            >
+              Retry
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
@@ -113,7 +208,7 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
           </p>
           <div className="mt-4 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
             <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full">
-              Version {ovvpData.metadata.version}
+              Version {ovvpData?.metadata?.version || 'N/A'}
             </span>
             <span>{models.length} Model Topologies</span>
             <span>{models.reduce((sum, m) => sum + m.models.length, 0)} Total Variants</span>
