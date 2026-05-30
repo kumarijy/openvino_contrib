@@ -6,7 +6,7 @@
 [![React](https://img.shields.io/badge/React-18.2-61dafb.svg)](https://react.dev/)
 [![Build Status](https://img.shields.io/badge/build-passing-success.svg)](https://github.com/kumarijy/openvino_contrib)
 
-A comprehensive web application showcasing OpenVINO model resources including GenAI models, Open Model Zoo (Intel & Public models), and model performance benchmarks.
+A comprehensive web application showcasing OpenVINO model resources including GenAI models, Model Hub benchmarks, Verified models, Open Model Zoo (Intel & Public models), and OVVP validated topologies - featuring over 2,400 models across 6 resource categories.
 
 **🌐 Live Demo**: https://kumarijy.github.io/openvino_contrib/
 
@@ -44,10 +44,32 @@ Track AI model support across OpenVINO GenAI releases:
 - Style Transfer Models
 - And more...
 
-### 4. **Coming Soon**
-- OpenVINO Model Hub for AI Inference Benchmarks
-- AI Models Verified for OpenVINO
-- OVVP (OpenVINO Validation Program)
+### 4. **OpenVINO Model Hub for AI Inference Benchmarks**
+60+ AI models verified and optimized for OpenVINO inference:
+- LLM Models (11): BERT, DeepSeek, GPT, Llama, Mistral, Phi, Qwen
+- Vision Models (5): Detectron-v2, MobileNetV2, ResNet-50, SSD, YOLO11
+- Multimodal Models (4): FLUX-1, Gemma3, MiniCPM-V, Qwen2.5-VL
+- Diffusion Models (1): StableDiffusion-V1-5
+
+### 5. **AI Models Verified for OpenVINO**
+1,877+ models tested and verified for Intel® Core Ultra™ Processors:
+- Grouped by model families
+- Optimized performance metrics
+- Full compatibility verification
+
+### 6. **OVVP (OpenVINO Validation Program)**
+291 validated model topologies with 738 variants:
+- **Frameworks**: TF, TF2, ONNX
+- **Precisions**: FP16, FP32, INT8, INT1
+- **Variants Explained**: Each model topology can have multiple variants representing different combinations of framework and precision. For example:
+  - `bert-base-chinese` with **2 variants**: ONNX+FP16, ONNX+FP32
+  - `yolo-v8n` with **3 variants**: ONNX+FP16, ONNX+FP32, ONNX+INT8
+- **Why Variants Matter**:
+  - More variants = More deployment flexibility
+  - Different precisions offer trade-offs (FP32 = accuracy, INT8 = speed)
+  - Framework choice depends on your platform and tools
+- **Dynamic Data**: Fetches latest validated models from GitHub
+- **Dropdown Filters**: Clean interface for framework and precision selection
 
 ## Features
 
@@ -240,12 +262,28 @@ npm run build
 - **Public Models**: 111 community models
 - **Categories**: 25+ model categories combined
 
+### Model Hub
+- **Models**: 60+ optimized models
+- **Categories**: LLM, Vision, Multimodal, Diffusion
+
+### Verified Models
+- **Models**: 1,877+ verified models
+- **Target**: Intel® Core Ultra™ Processors
+- **Organization**: Grouped by model families
+
+### OVVP (Validation Program)
+- **Model Topologies**: 291 validated topologies
+- **Total Variants**: 738 framework/precision combinations
+- **Frameworks**: TF, TF2, ONNX
+- **Precisions**: FP16, FP32, INT8, INT1
+- **Data Source**: GitHub (dynamically fetched)
+
 ### Technical
-- **Components**: 22 React components
-- **Bundle Size**: ~1.5 MB (production, with all features)
-- **Build Time**: ~6-8 seconds
+- **Components**: 26 React components
+- **Bundle Size**: ~1.95 MB (production, with all features)
+- **Build Time**: ~8-10 seconds
 - **Type Safety**: 100% TypeScript
-- **Pages**: 7+ navigable pages
+- **Pages**: 10+ navigable pages (including landing, hub, verified, OVVP)
 
 ## Browser Support
 
