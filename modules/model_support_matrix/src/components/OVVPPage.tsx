@@ -22,6 +22,8 @@ interface TopologyModel {
   topology: string;
   models: ModelVariant[];
   tags?: string[];
+  definition?: string;
+  category?: string;
 }
 
 interface OVVPData {
@@ -35,6 +37,7 @@ interface OVVPData {
 
 export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedDefinition, setSelectedDefinition] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
   const [selectedPrecision, setSelectedPrecision] = useState<string | null>(null);
@@ -45,21 +48,41 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch OVVP data from GitHub
+  // Fetch OVVP data from all three sources
   useEffect(() => {
     const fetchOVVPData = async () => {
       try {
         setLoading(true);
         setError(null);
 
-        const response = await fetch('/data/public-openvino.json');
+        // Fetch Intel-OV, Public-OV, and LLM-OV data in parallel
+        const [intelResponse, publicResponse, llmResponse] = await Promise.all([
+          fetch('https://raw.githubusercontent.com/kumarijy/openvino_contrib/master/modules/model_support_matrix/src/data/ovvp_models.json'),
+          fetch('/data/public-openvino.json'),
+          fetch('/data/llm-ov-optimum.json')
+        ]);
 
-        if (!response.ok) {
-          throw new Error(`Failed to fetch OVVP data: ${response.status} ${response.statusText}`);
+        if (!intelResponse.ok || !publicResponse.ok || !llmResponse.ok) {
+          throw new Error('Failed to fetch OVVP data');
         }
 
-        const data = await response.json();
-        setOvvpData(data);
+        const [intelData, publicData, llmData] = await Promise.all([
+          intelResponse.json(),
+          publicResponse.json(),
+          llmResponse.json()
+        ]);
+
+        // Merge the data and add definition tags
+        const mergedData = {
+          metadata: intelData.metadata,
+          scope: [
+            ...intelData.scope.map((model: any) => ({ ...model, definition: 'Intel-OV models' })),
+            ...publicData.scope.map((model: any) => ({ ...model, definition: 'Public-OV models' })),
+            ...llmData.scope.map((model: any) => ({ ...model, definition: 'LLM-OV models' }))
+          ]
+        };
+
+        setOvvpData(mergedData);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load OVVP data');
         console.error('Error fetching OVVP data:', err);
@@ -169,9 +192,14 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
 
   // Get unique categories from models
   const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(models.map(m => m.category)));
+    const uniqueCategories = Array.from(new Set(models.map(m => m.category).filter(Boolean)));
     return uniqueCategories.sort();
   }, [models]);
+
+  // Get unique definitions
+  const definitions = useMemo(() => {
+    return ['Intel-OV models', 'Public-OV models', 'LLM-OV models'];
+  }, []);
 
   // Get unique frameworks and precisions
   const frameworks = useMemo(() => {
@@ -201,6 +229,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
       const matchesSearch = !searchQuery ||
         model.topology.toLowerCase().includes(searchQuery.toLowerCase());
 
+      // Definition filter
+      const matchesDefinition = !selectedDefinition || model.definition === selectedDefinition;
+
       // Category filter
       const matchesCategory = !selectedCategory || model.category === selectedCategory;
 
@@ -212,9 +243,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
       const matchesPrecision = !selectedPrecision ||
         model.models.some(variant => variant.precision === selectedPrecision);
 
-      return matchesSearch && matchesCategory && matchesFramework && matchesPrecision;
+      return matchesSearch && matchesDefinition && matchesCategory && matchesFramework && matchesPrecision;
     });
-  }, [models, searchQuery, selectedCategory, selectedFramework, selectedPrecision]);
+  }, [models, searchQuery, selectedDefinition, selectedCategory, selectedFramework, selectedPrecision]);
 
   // Get variant count for a model
   const getVariantCount = (model: TopologyModel) => {
@@ -309,8 +340,8 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
             <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full">
               Version {ovvpData?.metadata?.version || 'N/A'}
             </span>
-            <span>{models.length} Model Topologies</span>
-            <span>{models.reduce((sum, m) => sum + m.models.length, 0)} Total Variants</span>
+            <span>Showing {filteredModels.length} Model Topologies</span>
+            <span>{filteredModels.reduce((sum, m) => sum + m.models.length, 0)} Total Variants</span>
           </div>
         </div>
       </header>
@@ -352,8 +383,28 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
             </div>
           </div>
 
-          {/* Category, Framework and Precision Filters */}
+          {/* Definition, Category, Framework and Precision Filters */}
           <div className="flex flex-wrap gap-4">
+            {/* Definition Filter */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="definition-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Definition:
+              </label>
+              <select
+                id="definition-filter"
+                value={selectedDefinition || ''}
+                onChange={(e) => setSelectedDefinition(e.target.value || null)}
+                className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-openvino-purple focus:border-transparent text-gray-900 dark:text-white"
+              >
+                <option value="">All Definitions</option>
+                {definitions.map((definition) => (
+                  <option key={definition} value={definition}>
+                    {definition}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             {/* Category Filter */}
             <div className="flex items-center gap-2">
               <label htmlFor="category-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
