@@ -35,6 +35,7 @@ interface OVVPData {
 
 export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
   const [selectedPrecision, setSelectedPrecision] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
@@ -51,9 +52,7 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          'https://raw.githubusercontent.com/kumarijy/openvino_contrib/master/modules/model_support_matrix/src/data/ovvp_models.json'
-        );
+        const response = await fetch('/data/public-openvino.json');
 
         if (!response.ok) {
           throw new Error(`Failed to fetch OVVP data: ${response.status} ${response.statusText}`);
@@ -72,10 +71,107 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
     fetchOVVPData();
   }, []);
 
-  // Parse OVVP data
+  // Function to categorize models based on topology name
+  const categorizeModel = (topology: string): string => {
+    const name = topology.toLowerCase();
+
+    // Object Detection
+    if (name.includes('detection') || name.includes('ssd') || name.includes('yolo') ||
+        name.includes('rcnn') || name.includes('retinanet')) {
+      return 'Object Detection';
+    }
+
+    // Segmentation
+    if (name.includes('segmentation') || name.includes('mask') || name.includes('unet') ||
+        name.includes('icnet')) {
+      return 'Segmentation';
+    }
+
+    // Image Processing & Enhancement
+    if (name.includes('denoise') || name.includes('sharpen') || name.includes('blur') ||
+        name.includes('super-resolution') || name.includes('srgan') || name.includes('esrgan')) {
+      return 'Image Processing';
+    }
+
+    // NLP & Language Models
+    if (name.includes('bert') || name.includes('gpt') || name.includes('xlnet') ||
+        name.includes('transformer') || name.includes('translation') || name.includes('nlp')) {
+      return 'NLP';
+    }
+
+    // Face Recognition & Analysis
+    if (name.includes('face') || name.includes('facial') || name.includes('landmarks')) {
+      return 'Face Analysis';
+    }
+
+    // Person/Human Analysis
+    if (name.includes('person') || name.includes('human') || name.includes('pose') ||
+        name.includes('gaze') || name.includes('action-recognition')) {
+      return 'Human Analysis';
+    }
+
+    // Text Recognition & OCR
+    if (name.includes('text') || name.includes('ocr') || name.includes('handwritten')) {
+      return 'Text Recognition';
+    }
+
+    // Speech & Audio
+    if (name.includes('speech') || name.includes('audio') || name.includes('noise-suppression') ||
+        name.includes('tts') || name.includes('text-to-speech')) {
+      return 'Speech & Audio';
+    }
+
+    // Recommendation Systems
+    if (name.includes('recommendation') || name.includes('dlrm') || name.includes('ncf') ||
+        name.includes('wide') || name.includes('deep')) {
+      return 'Recommendation';
+    }
+
+    // Generative Models
+    if (name.includes('gan') || name.includes('vae') || name.includes('generative') ||
+        name.includes('style')) {
+      return 'Generative AI';
+    }
+
+    // 3D & Depth
+    if (name.includes('3d') || name.includes('depth') || name.includes('vnet')) {
+      return '3D & Depth';
+    }
+
+    // Time Series & Sequence
+    if (name.includes('tcn') || name.includes('time-series') || name.includes('forecasting') ||
+        name.includes('sequence')) {
+      return 'Time Series';
+    }
+
+    // Classification
+    if (name.includes('classification') || name.includes('resnet') || name.includes('mobilenet') ||
+        name.includes('efficientnet') || name.includes('inception')) {
+      return 'Classification';
+    }
+
+    // Vehicle Analysis
+    if (name.includes('vehicle') || name.includes('license-plate')) {
+      return 'Vehicle Analysis';
+    }
+
+    // Default
+    return 'Other';
+  };
+
+  // Parse OVVP data and add categories
   const models = useMemo(() => {
-    return ovvpData?.scope || [];
+    return (ovvpData?.scope || []).map(model => ({
+      ...model,
+      category: categorizeModel(model.topology)
+    }));
   }, [ovvpData]);
+
+  // Get unique categories from models
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(models.map(m => m.category)));
+    return uniqueCategories.sort();
+  }, [models]);
 
   // Get unique frameworks and precisions
   const frameworks = useMemo(() => {
@@ -105,6 +201,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
       const matchesSearch = !searchQuery ||
         model.topology.toLowerCase().includes(searchQuery.toLowerCase());
 
+      // Category filter
+      const matchesCategory = !selectedCategory || model.category === selectedCategory;
+
       // Framework filter
       const matchesFramework = !selectedFramework ||
         model.models.some(variant => variant.framework === selectedFramework);
@@ -113,9 +212,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
       const matchesPrecision = !selectedPrecision ||
         model.models.some(variant => variant.precision === selectedPrecision);
 
-      return matchesSearch && matchesFramework && matchesPrecision;
+      return matchesSearch && matchesCategory && matchesFramework && matchesPrecision;
     });
-  }, [models, searchQuery, selectedFramework, selectedPrecision]);
+  }, [models, searchQuery, selectedCategory, selectedFramework, selectedPrecision]);
 
   // Get variant count for a model
   const getVariantCount = (model: TopologyModel) => {
@@ -253,8 +352,28 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
             </div>
           </div>
 
-          {/* Framework and Precision Filters */}
+          {/* Category, Framework and Precision Filters */}
           <div className="flex flex-wrap gap-4">
+            {/* Category Filter */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="category-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Category:
+              </label>
+              <select
+                id="category-filter"
+                value={selectedCategory || ''}
+                onChange={(e) => setSelectedCategory(e.target.value || null)}
+                className="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-openvino-purple focus:border-transparent text-gray-900 dark:text-white"
+              >
+                <option value="">All Categories</option>
+                {categories.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             {/* Framework Filter */}
             <div className="flex items-center gap-2">
               <label htmlFor="framework-filter" className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -319,9 +438,12 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
                     key={model.topology}
                     className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6 hover:shadow-lg transition-all"
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 break-words">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 break-words">
                       {model.topology}
                     </h3>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mb-3 font-medium">
+                      {model.category}
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600 dark:text-gray-400">Variants:</span>
@@ -362,6 +484,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
                         Model Topology
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Category
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         Frameworks
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -385,6 +510,11 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
                           <td className="px-6 py-4">
                             <div className="text-sm font-medium text-gray-900 dark:text-white">
                               {model.topology}
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <div className="text-xs text-gray-500 dark:text-gray-400">
+                              {model.category}
                             </div>
                           </td>
                           <td className="px-6 py-4">
