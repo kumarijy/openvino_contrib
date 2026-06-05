@@ -16,3 +16,4 @@ export { LandingPage } from './LandingPage';
 export { ModelHubPage } from './ModelHubPage';
 export { VerifiedModelsPage } from './VerifiedModelsPage';
 export { OVVPPage } from './OVVPPage';
+export { RequestModelModal } from './RequestModelModal';

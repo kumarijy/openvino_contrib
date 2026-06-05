@@ -23,6 +23,7 @@ import {
   ModelHubPage,
   VerifiedModelsPage,
   OVVPPage,
+  RequestModelModal,
 } from './components';
 import type { ViewMode, SortConfig, Model, ModelCategory } from './types';
 
@@ -49,6 +50,7 @@ const App: React.FC = () => {
   });
   const [selectedModel, setSelectedModel] = useState<Model | null>(null);
   const [showComparison, setShowComparison] = useState(false);
+  const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
   const [comparisonVersions, setComparisonVersions] = useState<{
     base: string;
     compare: string;
@@ -172,14 +174,12 @@ const App: React.FC = () => {
             </div>
             <div className="flex items-center space-x-3">
               <DarkModeToggle />
-              <a
-                href="https://jira.devtools.intel.com/secure/CreateIssue.jspa?pid=16990&issuetype=1"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsRequestModalOpen(true)}
                 className="px-4 py-2 text-sm font-medium rounded-lg border border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900 dark:text-green-300 dark:border-green-700 dark:hover:bg-green-800 transition-colors flex items-center"
               >
                 <span className="mr-1">➕</span> Request Model
-              </a>
+              </button>
               <button
                 onClick={() => setShowComparison(!showComparison)}
                 className={`px-4 py-2 text-sm font-medium rounded-lg border transition-colors ${
@@ -349,6 +349,9 @@ const App: React.FC = () => {
           onClose={() => setSelectedModel(null)}
         />
       )}
+
+      {/* Request Model Modal */}
+      <RequestModelModal isOpen={isRequestModalOpen} onClose={() => setIsRequestModalOpen(false)} />
 
       {/* Footer */}
       <footer className="mt-16 pb-8 border-t border-gray-200">

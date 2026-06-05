@@ -2,7 +2,7 @@
  * LandingPage component - Entry point showing different OpenVINO model resources
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ChartBarIcon,
   CheckBadgeIcon,
@@ -10,6 +10,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 import { DarkModeToggle } from './DarkModeToggle';
+import { RequestModelModal } from './RequestModelModal';
 
 interface LandingPageProps {
   onNavigateToMatrix: () => void;
@@ -71,22 +72,25 @@ const Card: React.FC<CardProps> = ({ title, description, icon, iconColor, onClic
 };
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, onNavigateToModelHub, onNavigateToVerifiedModels, onNavigateToOVVP }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       {/* Header with actions */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-end items-center space-x-3">
           <DarkModeToggle />
-          <a
-            href="https://jira.devtools.intel.com/secure/CreateIssue.jspa?pid=16990&issuetype=1"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="px-4 py-2 text-sm font-medium rounded-lg border border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900 dark:text-green-300 dark:border-green-700 dark:hover:bg-green-800 transition-colors flex items-center"
           >
             <span className="mr-1">➕</span> Request Model
-          </a>
+          </button>
         </div>
       </div>
+
+      {/* Request Model Modal */}
+      <RequestModelModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

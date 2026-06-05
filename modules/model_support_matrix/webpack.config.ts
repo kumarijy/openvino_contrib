@@ -25,10 +25,14 @@ const config: webpack.Configuration = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.json$/,
+        type: 'json',
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
@@ -61,6 +65,13 @@ const config: webpack.Configuration = {
     port: 3000,
     hot: true,
     historyApiFallback: true,
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    ],
   },
 };
 

@@ -6,6 +6,8 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowLeftIcon, TableCellsIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
+import { DarkModeToggle } from './DarkModeToggle';
+import { RequestModelModal } from './RequestModelModal';
 
 interface OVVPPageProps {
   onNavigateBack: () => void;
@@ -42,6 +44,7 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
   const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
   const [selectedPrecision, setSelectedPrecision] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
+  const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
 
   // State for data fetching
   const [ovvpData, setOvvpData] = useState<OVVPData | null>(null);
@@ -323,13 +326,24 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <button
-            onClick={onNavigateBack}
-            className="mb-4 flex items-center text-openvino-purple dark:text-purple-400 hover:underline"
-          >
-            <ArrowLeftIcon className="h-5 w-5 mr-2" />
-            Back to Resources
-          </button>
+          <div className="flex items-center justify-between mb-4">
+            <button
+              onClick={onNavigateBack}
+              className="flex items-center text-openvino-purple dark:text-purple-400 hover:underline"
+            >
+              <ArrowLeftIcon className="h-5 w-5 mr-2" />
+              Back to Resources
+            </button>
+            <div className="flex items-center space-x-3">
+              <DarkModeToggle />
+              <button
+                onClick={() => setIsRequestModalOpen(true)}
+                className="px-4 py-2 text-sm font-medium rounded-lg border border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900 dark:text-green-300 dark:border-green-700 dark:hover:bg-green-800 transition-colors flex items-center"
+              >
+                <span className="mr-1">➕</span> Request Model
+              </button>
+            </div>
+          </div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             OpenVINO Validation Program (OVVP)
           </h1>
@@ -613,6 +627,9 @@ export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
           </div>
         )}
       </main>
+
+      {/* Request Model Modal */}
+      <RequestModelModal isOpen={isRequestModalOpen} onClose={() => setIsRequestModalOpen(false)} />
     </div>
   );
 };

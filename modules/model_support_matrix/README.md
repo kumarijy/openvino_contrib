@@ -62,10 +62,23 @@ Track AI model support across OpenVINO GenAI releases:
 
 ### Core Features
 
+#### Request Model Integration (NEW in v2.1.0)
+- **Smart Modal Form**: Pre-filled Jira issue creation
+  - Auto-populates user name and email from Windows environment
+  - Pre-fills Project, Issue Type, Component, Labels, Priority, Regions of Interest, and Acceptance Criteria
+  - Available on ALL pages (Landing, Matrix, Model Hub, Verified Models, OVVP)
+- **Direct Jira Integration**: Opens Intel Jira with all fields pre-populated
+  - Project: OpenVINO (CVS)
+  - Issue Type: Requirement
+  - Component: Model Enabling
+  - Reporter: Auto-set to current user
+- **User-Friendly**: Single-click model enablement requests
+- **Documentation**: See [JIRA_DIRECT_LINK_APPROACH.md](JIRA_DIRECT_LINK_APPROACH.md) for details
+
 #### Landing Page
 - **Resource Cards**: Navigate to different OpenVINO model resources
 - **Dark Mode**: System-aware dark mode with manual toggle
-- **Request Model**: Direct link to Jira for model support requests
+- **Request Model**: Integrated Jira modal for model enablement requests (available on all pages)
 
 #### GenAI Model Support Matrix
 - **Variant-Level Tracking**: Accurate counting of model variants (33 variants across 15 models)
@@ -124,6 +137,12 @@ npm install
 # Start development server (http://localhost:3000)
 npm start
 
+# Start with backend server (for Jira integration testing)
+npm run start:dev
+
+# Start backend server only
+npm run start:server
+
 # Run type checking
 npm run type-check
 
@@ -133,6 +152,16 @@ npm run lint
 # Build for production
 npm run build
 ```
+
+### Jira Integration Setup (Optional)
+
+The Request Model feature works out-of-the-box with direct Jira links. For local testing:
+
+1. Copy `.env.example` to `.env`
+2. Configure Jira credentials (optional - only for API testing)
+3. See [JIRA_SETUP.md](JIRA_SETUP.md) for detailed setup instructions
+
+**Note:** The production deployment uses direct Jira URL pre-filling, so no backend credentials are required.
 
 ## Project Structure
 
@@ -230,6 +259,10 @@ npm run build
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - Deployment instructions
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
 - **[CHANGELOG.md](CHANGELOG.md)** - Version history
+- **[JIRA_SETUP.md](JIRA_SETUP.md)** - Jira integration setup guide
+- **[JIRA_DIRECT_LINK_APPROACH.md](JIRA_DIRECT_LINK_APPROACH.md)** - Technical implementation details
+- **[JIRA_IMPLEMENTATION.md](JIRA_IMPLEMENTATION.md)** - Complete architecture documentation
+- **[USER_AUTHENTICATION_SUMMARY.md](USER_AUTHENTICATION_SUMMARY.md)** - User authentication approach
 - **PHASE*_SUMMARY.md** - Phase-specific documentation
 
 ## Project Stats
@@ -256,11 +289,12 @@ npm run build
 - **Data Source**: GitHub (dynamically fetched)
 
 ### Technical
-- **Components**: 26 React components
-- **Bundle Size**: ~1.95 MB (production, with all features)
+- **Components**: 27 React components (including RequestModalModal)
+- **Bundle Size**: ~2.0 MB (production, with all features)
 - **Build Time**: ~8-10 seconds
 - **Type Safety**: 100% TypeScript
 - **Pages**: 10+ navigable pages (including landing, hub, verified, OVVP)
+- **Backend API**: Optional Express.js server for Jira integration testing
 
 ## Browser Support
 
@@ -296,9 +330,57 @@ Part of the [OpenVINO Toolkit](https://github.com/openvinotoolkit) ecosystem.
 
 ---
 
-**Status**: ✅ Production Ready (v2.0.0)  
-**Last Updated**: 2026-05-21  
+**Status**: ✅ Production Ready (v2.1.0)  
+**Last Updated**: 2026-06-04  
 **Maintained by**: [@kumarijy](https://github.com/kumarijy)
+
+## Version 2.1.0 Release Notes (Latest)
+
+### New Features
+
+#### Jira Integration - Request Model Feature
+- **Smart Modal Form**: Click "Request Model" button on any page
+  - Auto-populates user information from Windows environment
+  - Pre-fills all required Jira fields automatically
+- **Pre-filled Jira Fields**:
+  - Project: OpenVINO (CVS) - ID 26939
+  - Issue Type: Requirement - ID 21
+  - Reporter: Auto-set to current user (kumarijy)
+  - Component: Model Enabling - ID 168914
+  - Labels: model
+  - Priority: P3-Medium
+  - Regions of Interest Defined: Enable Model (Analysis, Convertion, E2E test)
+  - Acceptance Criteria: According to statuses (Inferred, Validated, Optimized)
+- **Universal Availability**: Button appears on all 5 pages
+  - Landing Page
+  - GenAI Model Support Matrix
+  - Model Hub Page
+  - Verified Models Page
+  - OVVP Page
+- **Direct Link Approach**: Opens Intel Jira with all fields pre-filled
+  - No backend authentication required in production
+  - Works with user's existing Jira session
+  - Proper user attribution (Reporter field)
+
+### Technical Implementation
+- **New Component**: RequestModelModal with form validation
+- **Auto-detection**: Windows environment variable parsing
+- **Backend API** (optional): Express.js server for testing
+  - User info auto-detection endpoint
+  - Jira field validation
+- **Documentation**: 4 comprehensive guides
+  - JIRA_SETUP.md
+  - JIRA_DIRECT_LINK_APPROACH.md
+  - JIRA_IMPLEMENTATION.md
+  - USER_AUTHENTICATION_SUMMARY.md
+
+### Bug Fixes & Improvements
+- Fixed Model Link field to accept freeform text (for restricted access models)
+- Improved dark mode compatibility for modal
+- Added DarkModeToggle to all sub-pages
+- Enhanced form validation and error handling
+
+---
 
 ## Version 2.0.0 Release Notes
 
