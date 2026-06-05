@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { ArrowLeftIcon, TableCellsIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
 import { DarkModeToggle } from './DarkModeToggle';
 import { RequestModelModal } from './RequestModelModal';
+import modelHubData from '../data/model_hub.json';
 
 interface ModelHubPageProps {
   onNavigateBack: () => void;
@@ -17,38 +18,8 @@ interface ModelInfo {
   category: string;
 }
 
-// Models from Intel OpenVINO Model Hub
-// Source: https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/model-hub.html
-const SUPPORTED_MODELS: ModelInfo[] = [
-  // LLM Models
-  { name: 'BERT-Base-Cased', category: 'LLM' },
-  { name: 'DeepSeek-R1-Distill-Llama-8B', category: 'LLM' },
-  { name: 'DeepSeek-R1-Distill-Qwen-1.5B', category: 'LLM' },
-  { name: 'GPT-0SS-20B', category: 'LLM' },
-  { name: 'Llama-2-7B-chat', category: 'LLM' },
-  { name: 'Llama3-8B-Chat', category: 'LLM' },
-  { name: 'Llama3.2-3B-Instruct', category: 'LLM' },
-  { name: 'Mistral-7B-Instruct-v0.3', category: 'LLM' },
-  { name: 'Phi-4-Mini-Instruct', category: 'LLM' },
-  { name: 'Qwen3-30B-A3B', category: 'LLM' },
-  { name: 'Qwen3-8B', category: 'LLM' },
-
-  // Vision Models
-  { name: 'Detectron-v2', category: 'Vision' },
-  { name: 'MobileNetV2', category: 'Vision' },
-  { name: 'ResNet-50', category: 'Vision' },
-  { name: 'SSD-ResNet34-1200', category: 'Vision' },
-  { name: 'Ultralytics YOLO11', category: 'Vision' },
-
-  // Multimodal Models
-  { name: 'FLUX-1-schnell', category: 'Multimodal' },
-  { name: 'Gemma3-4B', category: 'Multimodal' },
-  { name: 'MiniCPM-V-2_6', category: 'Multimodal' },
-  { name: 'Qwen2.5-VL-7B-Instruct', category: 'Multimodal' },
-
-  // Diffusion Models
-  { name: 'StableDiffusion-V1-5', category: 'Diffusion' },
-];
+// Load models from JSON file
+const SUPPORTED_MODELS: ModelInfo[] = modelHubData.models;
 
 export const ModelHubPage: React.FC<ModelHubPageProps> = ({ onNavigateBack }) => {
   const [searchQuery, setSearchQuery] = useState('');
