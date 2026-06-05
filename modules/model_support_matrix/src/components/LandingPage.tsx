@@ -349,32 +349,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
               </div>
             )}
           </div>
-
-          {/* Request Model CTA Banner */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900 dark:to-teal-900 rounded-2xl shadow-xl border-2 border-green-200 dark:border-green-700 p-6 hover:shadow-2xl transition-all duration-300">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex-1 text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                    <span className="text-2xl">🚀</span>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      Need a model enabled?
-                    </h3>
-                  </div>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Request OpenVINO support for your favorite AI model. Our team will review and prioritize your request.
-                  </p>
-                </div>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-bold text-lg hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center whitespace-nowrap"
-                >
-                  <span className="mr-2">➕</span>
-                  Request Model Now
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Cards Grid */}
