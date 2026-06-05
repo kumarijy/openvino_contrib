@@ -84,6 +84,7 @@ interface SearchResult {
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, onNavigateToModelHub, onNavigateToVerifiedModels, onNavigateToOVVP }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showRequestTooltip, setShowRequestTooltip] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchData, setSearchData] = useState<{
     genai: any[];
@@ -207,12 +208,41 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex justify-end items-center space-x-3">
           <DarkModeToggle />
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-5 py-2.5 text-sm font-bold rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center animate-pulse hover:animate-none"
+
+          {/* Request Model Button with Hover Tooltip */}
+          <div
+            className="relative"
+            onMouseEnter={() => setShowRequestTooltip(true)}
+            onMouseLeave={() => setShowRequestTooltip(false)}
           >
-            <span className="mr-2 text-lg">➕</span> Request Model
-          </button>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-5 py-2.5 text-sm font-bold rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center animate-pulse hover:animate-none"
+            >
+              <span className="mr-2 text-lg">➕</span> Request Model
+            </button>
+
+            {/* Hover Tooltip */}
+            {showRequestTooltip && (
+              <div className="absolute top-full right-0 mt-2 w-80 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900 dark:to-teal-900 rounded-xl shadow-2xl border-2 border-green-200 dark:border-green-700 p-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">🚀</span>
+                    <div>
+                      <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2">
+                        Need a model enabled?
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Request OpenVINO support for your favorite AI model. Our team will review and prioritize your request.
+                      </p>
+                    </div>
+                  </div>
+                  {/* Arrow pointer */}
+                  <div className="absolute -top-2 right-6 w-4 h-4 bg-green-50 dark:bg-green-900 border-l-2 border-t-2 border-green-200 dark:border-green-700 transform rotate-45"></div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
