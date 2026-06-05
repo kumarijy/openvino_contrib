@@ -224,7 +224,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
 
             {/* Hover Tooltip */}
             {showRequestTooltip && (
-              <div className="absolute top-full right-0 mt-2 w-80 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 mt-2 w-80 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900 dark:to-teal-900 rounded-xl shadow-2xl border-2 border-green-200 dark:border-green-700 p-4">
                   <div className="flex items-start gap-3">
                     <span className="text-2xl flex-shrink-0">🚀</span>
@@ -238,7 +238,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
                     </div>
                   </div>
                   {/* Arrow pointer */}
-                  <div className="absolute -top-2 right-6 w-4 h-4 bg-green-50 dark:bg-green-900 border-l-2 border-t-2 border-green-200 dark:border-green-700 transform rotate-45"></div>
+                  <div className="absolute -top-2 left-6 w-4 h-4 bg-green-50 dark:bg-green-900 border-l-2 border-t-2 border-green-200 dark:border-green-700 transform rotate-45"></div>
                 </div>
               </div>
             )}
