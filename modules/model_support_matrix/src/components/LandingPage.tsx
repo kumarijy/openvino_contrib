@@ -15,10 +15,10 @@ import { DarkModeToggle } from './DarkModeToggle';
 import { RequestModelModal } from './RequestModelModal';
 
 interface LandingPageProps {
-  onNavigateToMatrix: () => void;
-  onNavigateToModelHub: () => void;
-  onNavigateToVerifiedModels: () => void;
-  onNavigateToOVVP: () => void;
+  onNavigateToMatrix: (modelId?: string) => void;
+  onNavigateToModelHub: (modelName?: string) => void;
+  onNavigateToVerifiedModels: (modelName?: string) => void;
+  onNavigateToOVVP: (modelName?: string) => void;
 }
 
 interface CardProps {
@@ -78,7 +78,8 @@ interface SearchResult {
   description: string;
   source: string;
   category?: string;
-  action: () => void;
+  modelId?: string;
+  action: (modelId?: string) => void;
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, onNavigateToModelHub, onNavigateToVerifiedModels, onNavigateToOVVP }) => {
@@ -137,6 +138,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
           description: model.description || `${model.family} - ${model.category}`,
           source: 'GenAI Model Support',
           category: model.category,
+          modelId: model.id || model.name,
           action: onNavigateToMatrix,
         });
       }
@@ -154,6 +156,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
           description: `Model Hub - ${model.category}`,
           source: 'Model Hub for AI Inference',
           category: model.category,
+          modelId: model.name,
           action: onNavigateToModelHub,
         });
       }
@@ -171,6 +174,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
           description: `Verified - ${model.task || 'AI Model'}`,
           source: 'Verified Models',
           category: model.task,
+          modelId: model.model_name,
           action: onNavigateToVerifiedModels,
         });
       }
@@ -188,6 +192,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
           description: `OVVP - ${model.framework || 'Model'}`,
           source: 'OVVP',
           category: model.framework,
+          modelId: model.name,
           action: onNavigateToOVVP,
         });
       }
@@ -256,7 +261,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
                     <button
                       key={idx}
                       onClick={() => {
-                        result.action();
+                        result.action(result.modelId);
                         setSearchQuery('');
                       }}
                       className="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"

@@ -3,7 +3,7 @@
  * Models extracted from OpenVINO documentation and tutorials
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeftIcon, TableCellsIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
 import { DarkModeToggle } from './DarkModeToggle';
 import { RequestModelModal } from './RequestModelModal';
@@ -11,6 +11,8 @@ import modelHubData from '../data/model_hub.json';
 
 interface ModelHubPageProps {
   onNavigateBack: () => void;
+  highlightedModel?: string | null;
+  onHighlightClear?: () => void;
 }
 
 interface ModelInfo {
@@ -21,11 +23,32 @@ interface ModelInfo {
 // Load models from JSON file
 const SUPPORTED_MODELS: ModelInfo[] = modelHubData.models;
 
-export const ModelHubPage: React.FC<ModelHubPageProps> = ({ onNavigateBack }) => {
+export const ModelHubPage: React.FC<ModelHubPageProps> = ({ onNavigateBack, highlightedModel, onHighlightClear }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
   const [isRequestModalOpen, setIsRequestModalOpen] = useState(false);
+  const highlightedCardRef = useRef<HTMLDivElement>(null);
+  const highlightedRowRef = useRef<HTMLTableRowElement>(null);
+
+  // Scroll to and highlight model when navigating from search
+  useEffect(() => {
+    if (highlightedModel) {
+      const ref = viewMode === 'cards' ? highlightedCardRef : highlightedRowRef;
+      if (ref.current) {
+        setTimeout(() => {
+          ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+
+        // Clear highlight after 3 seconds
+        const timer = setTimeout(() => {
+          onHighlightClear?.();
+        }, 3000);
+
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [highlightedModel, viewMode, onHighlightClear]);
 
   // Get unique categories
   const categories = Array.from(new Set(SUPPORTED_MODELS.map(m => m.category))).sort();
@@ -148,21 +171,27 @@ export const ModelHubPage: React.FC<ModelHubPageProps> = ({ onNavigateBack }) =>
         {filteredModels.length > 0 ? (
           viewMode === 'cards' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredModels.map((model) => (
-                <div
-                  key={model.name}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6 hover:shadow-lg transition-all"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    {model.name}
-                  </h3>
-                  <div>
-                    <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
-                      {model.category}
-                    </span>
+              {filteredModels.map((model) => {
+                const isHighlighted = highlightedModel === model.name;
+                return (
+                  <div
+                    key={model.name}
+                    ref={isHighlighted ? highlightedCardRef : null}
+                    className={`bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6 hover:shadow-lg transition-all ${
+                      isHighlighted ? 'ring-4 ring-yellow-400 animate-pulse' : ''
+                    }`}
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                      {model.name}
+                    </h3>
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
+                        {model.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 overflow-hidden">
@@ -178,20 +207,29 @@ export const ModelHubPage: React.FC<ModelHubPageProps> = ({ onNavigateBack }) =>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {filteredModels.map((model, idx) => (
-                    <tr key={`${model.name}-${idx}`} className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900 dark:text-white">
-                          {model.name}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
-                          {model.category}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                  {filteredModels.map((model, idx) => {
+                    const isHighlighted = highlightedModel === model.name;
+                    return (
+                      <tr
+                        key={`${model.name}-${idx}`}
+                        ref={isHighlighted ? highlightedRowRef : null}
+                        className={`hover:bg-gray-50 dark:hover:bg-gray-700 transition-all ${
+                          isHighlighted ? 'bg-yellow-100 dark:bg-yellow-900 animate-pulse' : ''
+                        }`}
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="text-sm font-medium text-gray-900 dark:text-white">
+                            {model.name}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
+                            {model.category}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

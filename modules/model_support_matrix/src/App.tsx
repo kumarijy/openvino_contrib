@@ -43,6 +43,7 @@ const App: React.FC = () => {
   } = useFilters(latestVersion);
 
   const [currentPage, setCurrentPage] = useState<'landing' | 'matrix' | 'modelHub' | 'verifiedModels' | 'ovvp'>('landing');
+  const [highlightedModel, setHighlightedModel] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>('table');
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     field: 'name',
@@ -132,24 +133,60 @@ const App: React.FC = () => {
   if (currentPage === 'landing') {
     return (
       <LandingPage
-        onNavigateToMatrix={() => setCurrentPage('matrix')}
-        onNavigateToModelHub={() => setCurrentPage('modelHub')}
-        onNavigateToVerifiedModels={() => setCurrentPage('verifiedModels')}
-        onNavigateToOVVP={() => setCurrentPage('ovvp')}
+        onNavigateToMatrix={(modelId?: string) => {
+          setCurrentPage('matrix');
+          if (modelId) {
+            setHighlightedModel(modelId);
+            setSearchQuery(modelId);
+          }
+        }}
+        onNavigateToModelHub={(modelName?: string) => {
+          setCurrentPage('modelHub');
+          setHighlightedModel(modelName || null);
+        }}
+        onNavigateToVerifiedModels={(modelName?: string) => {
+          setCurrentPage('verifiedModels');
+          setHighlightedModel(modelName || null);
+        }}
+        onNavigateToOVVP={(modelName?: string) => {
+          setCurrentPage('ovvp');
+          setHighlightedModel(modelName || null);
+        }}
       />
     );
   }
 
   if (currentPage === 'modelHub') {
-    return <ModelHubPage onNavigateBack={() => setCurrentPage('landing')} />;
+    return <ModelHubPage
+      onNavigateBack={() => {
+        setCurrentPage('landing');
+        setHighlightedModel(null);
+      }}
+      highlightedModel={highlightedModel}
+      onHighlightClear={() => setHighlightedModel(null)}
+    />;
   }
 
   if (currentPage === 'verifiedModels') {
-    return <VerifiedModelsPage onNavigateBack={() => setCurrentPage('landing')} />;
+    return <VerifiedModelsPage
+      onNavigateBack={() => {
+        setCurrentPage('landing');
+        setHighlightedModel(null);
+      }}
+      highlightedModel={highlightedModel}
+      onHighlightClear={() => setHighlightedModel(null)}
+    />;
   }
 
   if (currentPage === 'ovvp') {
-    return <OVVPPage onNavigateBack={() => setCurrentPage('landing')} />;
+    return <OVVPPage
+      onNavigateBack={() => {
+        setCurrentPage('landing');
+        setHighlightedModel(null);
+      }}
+      highlightedModel={highlightedModel}
+      onHighlightClear={() => setHighlightedModel(null)}
+    />;
   }
 
   return (

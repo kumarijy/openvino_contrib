@@ -10,6 +10,8 @@ import { DarkModeToggle } from './DarkModeToggle';
 import { RequestModelModal } from './RequestModelModal';
 
 interface OVVPPageProps {
+  highlightedModel?: string | null;
+  onHighlightClear?: () => void;
   onNavigateBack: () => void;
 }
 
@@ -37,7 +39,7 @@ interface OVVPData {
   scope: TopologyModel[];
 }
 
-export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack }) => {
+export const OVVPPage: React.FC<OVVPPageProps> = ({ onNavigateBack, highlightedModel, onHighlightClear }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDefinition, setSelectedDefinition] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

@@ -10,6 +10,8 @@ import { DarkModeToggle } from './DarkModeToggle';
 import { RequestModelModal } from './RequestModelModal';
 
 interface VerifiedModelsPageProps {
+  highlightedModel?: string | null;
+  onHighlightClear?: () => void;
   onNavigateBack: () => void;
 }
 
@@ -91,7 +93,7 @@ const VERIFIED_MODELS_SAMPLE: VerifiedModel[] = [
 ];
 */
 
-export const VerifiedModelsPage: React.FC<VerifiedModelsPageProps> = ({ onNavigateBack }) => {
+export const VerifiedModelsPage: React.FC<VerifiedModelsPageProps> = ({ onNavigateBack, highlightedModel, onHighlightClear }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
