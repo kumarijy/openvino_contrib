@@ -37,6 +37,8 @@ export const VersionComparison: React.FC<VersionComparisonProps> = ({
   baseVersion,
   compareVersion,
 }) => {
+  const [filterStatus, setFilterStatus] = React.useState<ComparisonResult['status'] | null>(null);
+
   const comparison = useMemo<ComparisonResult[]>(() => {
     const results: ComparisonResult[] = [];
 
@@ -130,6 +132,14 @@ export const VersionComparison: React.FC<VersionComparisonProps> = ({
     return parts.join(', ') || '-';
   };
 
+  const handleStatClick = (status: ComparisonResult['status'] | null) => {
+    setFilterStatus(filterStatus === status ? null : status);
+  };
+
+  const filteredComparison = filterStatus
+    ? comparison.filter((c) => c.status === filterStatus)
+    : comparison;
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -144,26 +154,59 @@ export const VersionComparison: React.FC<VersionComparisonProps> = ({
 
       {/* Statistics */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white rounded-lg shadow p-4">
+        <button
+          onClick={() => handleStatClick('new')}
+          className={`bg-white rounded-lg shadow p-4 text-left transition-all hover:shadow-lg hover:scale-105 ${
+            filterStatus === 'new' ? 'ring-2 ring-green-500' : ''
+          }`}
+        >
           <div className="text-3xl font-bold text-green-600 mb-1">{stats.new}</div>
           <div className="text-sm text-gray-600">New Models</div>
-        </div>
-        <div className="bg-white rounded-lg shadow p-4">
+        </button>
+        <button
+          onClick={() => handleStatClick('removed')}
+          className={`bg-white rounded-lg shadow p-4 text-left transition-all hover:shadow-lg hover:scale-105 ${
+            filterStatus === 'removed' ? 'ring-2 ring-red-500' : ''
+          }`}
+        >
           <div className="text-3xl font-bold text-red-600 mb-1">{stats.removed}</div>
           <div className="text-sm text-gray-600">Removed</div>
-        </div>
-        <div className="bg-white rounded-lg shadow p-4">
+        </button>
+        <button
+          onClick={() => handleStatClick('devices-changed')}
+          className={`bg-white rounded-lg shadow p-4 text-left transition-all hover:shadow-lg hover:scale-105 ${
+            filterStatus === 'devices-changed' ? 'ring-2 ring-yellow-500' : ''
+          }`}
+        >
           <div className="text-3xl font-bold text-yellow-600 mb-1">{stats.devicesChanged}</div>
           <div className="text-sm text-gray-600">Device Changes</div>
-        </div>
-        <div className="bg-white rounded-lg shadow p-4">
+        </button>
+        <button
+          onClick={() => handleStatClick('unchanged')}
+          className={`bg-white rounded-lg shadow p-4 text-left transition-all hover:shadow-lg hover:scale-105 ${
+            filterStatus === 'unchanged' ? 'ring-2 ring-gray-500' : ''
+          }`}
+        >
           <div className="text-3xl font-bold text-gray-600 mb-1">{stats.unchanged}</div>
           <div className="text-sm text-gray-600">Unchanged</div>
-        </div>
+        </button>
       </div>
 
       {/* Comparison Table */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
+        {filterStatus && (
+          <div className="bg-gray-50 px-6 py-3 border-b border-gray-200 flex items-center justify-between">
+            <span className="text-sm text-gray-600">
+              Filtering by: <span className="font-medium">{filterStatus === 'devices-changed' ? 'Device Changes' : filterStatus.charAt(0).toUpperCase() + filterStatus.slice(1)}</span>
+            </span>
+            <button
+              onClick={() => setFilterStatus(null)}
+              className="text-sm text-openvino-purple hover:underline"
+            >
+              Clear filter
+            </button>
+          </div>
+        )}
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
@@ -186,7 +229,7 @@ export const VersionComparison: React.FC<VersionComparisonProps> = ({
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {comparison.map((item, idx) => (
+              {filteredComparison.map((item, idx) => (
                 <tr key={idx} className={item.status === 'unchanged' ? 'bg-gray-50' : ''}>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm font-medium text-gray-900">{item.model.name}</div>
