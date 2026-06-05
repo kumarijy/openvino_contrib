@@ -209,9 +209,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
           <DarkModeToggle />
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-4 py-2 text-sm font-medium rounded-lg border border-green-500 bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900 dark:text-green-300 dark:border-green-700 dark:hover:bg-green-800 transition-colors flex items-center"
+            className="px-5 py-2.5 text-sm font-bold rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center animate-pulse hover:animate-none"
           >
-            <span className="mr-1">➕</span> Request Model
+            <span className="mr-2 text-lg">➕</span> Request Model
           </button>
         </div>
       </div>
@@ -297,12 +297,53 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToMatrix, on
             {searchQuery.trim() && searchResults.length === 0 && (
               <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-6 z-50">
                 <div className="text-center text-gray-600 dark:text-gray-400">
-                  <MagnifyingGlassIcon className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                  <p>No results found for "{searchQuery}"</p>
-                  <p className="text-sm mt-1">Try searching for model names, frameworks, or tasks</p>
+                  <MagnifyingGlassIcon className="h-12 w-12 mx-auto mb-3 opacity-50" />
+                  <p className="font-medium text-gray-900 dark:text-white mb-2">No results found for "{searchQuery}"</p>
+                  <p className="text-sm mb-4">Try searching for model names, frameworks, or tasks</p>
+
+                  {/* Request Model CTA */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-sm mb-3">Can't find the model you're looking for?</p>
+                    <button
+                      onClick={() => {
+                        setSearchQuery('');
+                        setIsModalOpen(true);
+                      }}
+                      className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium"
+                    >
+                      <span className="mr-2">➕</span>
+                      Request Model Enablement
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Request Model CTA Banner */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900 dark:to-teal-900 rounded-2xl shadow-xl border-2 border-green-200 dark:border-green-700 p-6 hover:shadow-2xl transition-all duration-300">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex-1 text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <span className="text-2xl">🚀</span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      Need a model enabled?
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Request OpenVINO support for your favorite AI model. Our team will review and prioritize your request.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-bold text-lg hover:from-green-600 hover:to-green-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center whitespace-nowrap"
+                >
+                  <span className="mr-2">➕</span>
+                  Request Model Now
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
