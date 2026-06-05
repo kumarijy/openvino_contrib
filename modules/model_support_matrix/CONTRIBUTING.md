@@ -159,7 +159,7 @@ git push origin add-mistral-8x7b-model
 
 ### Model Data Format
 
-Edit `src/data/models.json`:
+Edit `src/data/genai_models.json`:
 
 ```json
 {

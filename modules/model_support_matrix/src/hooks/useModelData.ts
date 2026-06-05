@@ -34,7 +34,7 @@ export function useModelData(): UseModelDataReturn {
         setLoading(true);
         setError(null);
 
-        const response = await fetch('/data/models.json');
+        const response = await fetch('/data/genai_models.json');
 
         if (!response.ok) {
           throw new Error(`Failed to load model data: ${response.statusText}`);

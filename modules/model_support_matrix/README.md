@@ -607,7 +607,7 @@ Phase 2 establishes the complete data layer for the application:
 - **Category & Device Enums**: Type-safe definitions for all categories and devices
 - **Statistics**: `Stats` interface for dashboard metrics
 
-#### Data Structure (`src/data/models.json`)
+#### Data Structure (`src/data/genai_models.json`)
 - Sample models from multiple categories:
   - **LLM**: Llama 3 (8B, 70B), Qwen 2.5 (7B, 72B)
   - **VLM**: Llama 3.2 Vision (11B)

@@ -28,7 +28,7 @@ Complete TypeScript type definitions for the entire application:
 - **`AppState`**: Complete application state interface
 - **`Stats`**: Dashboard statistics interface
 
-### 2. Data Structure (`src/data/models.json`)
+### 2. Data Structure (`src/data/genai_models.json`)
 
 Comprehensive JSON data structure with sample models:
 
@@ -91,7 +91,7 @@ Comprehensive helper functions for data manipulation:
 
 #### `useModelData` (`src/hooks/useModelData.ts`)
 Custom hook for loading model data:
-- Fetches data from `/data/models.json`
+- Fetches data from `/data/genai_models.json`
 - Manages loading state
 - Handles errors gracefully
 - Returns models, versions, loading, and error states
@@ -209,7 +209,7 @@ model_support_matrix/
 │   ├── types/
 │   │   └── index.ts              ✨ NEW - Complete type definitions
 │   ├── data/
-│   │   └── models.json           ✨ NEW - Model data with sample content
+│   │   └── genai_models.json           ✨ NEW - Model data with sample content
 │   ├── utils/
 │   │   ├── dataHelpers.ts        ✨ NEW - Data manipulation utilities
 │   │   └── validateData.ts       ✨ NEW - Data validation utilities

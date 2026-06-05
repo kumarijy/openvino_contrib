@@ -191,7 +191,7 @@ model_support_matrix/
 │   ├── types/                  # TypeScript types
 │   │   └── index.ts
 │   ├── data/                   # Model data
-│   │   └── models.json
+│   │   └── genai_models.json
 │   ├── App.tsx                 # Main component
 │   ├── index.tsx               # Entry point
 │   └── app.css                 # Global styles
@@ -204,7 +204,7 @@ model_support_matrix/
 
 ## Adding New Models
 
-### 1. Edit `src/data/models.json`
+### 1. Edit `src/data/genai_models.json`
 
 ```json
 {
@@ -257,7 +257,7 @@ npm start
 
 ### Data Not Loading
 1. Check browser console for errors
-2. Verify `src/data/models.json` is valid JSON
+2. Verify `src/data/genai_models.json` is valid JSON
 3. Run `npm run validate`
 
 ### Styles Not Applying
@@ -306,7 +306,7 @@ npm start
 5. Update documentation
 
 ### Improving Data
-1. Edit `src/data/models.json`
+1. Edit `src/data/genai_models.json`
 2. Follow existing structure
 3. Run `npm run validate`
 4. Test in UI
@@ -339,7 +339,7 @@ No environment variables needed - all configuration is in the code.
 ## FAQ
 
 **Q: Can I add more OpenVINO versions?**
-A: Yes, add to the `versions` array in `models.json` and update model `versionSupport`.
+A: Yes, add to the `versions` array in `genai_models.json` and update model `versionSupport`.
 
 **Q: How do I change the default version?**
 A: Edit the `latestVersion` calculation in `App.tsx`.

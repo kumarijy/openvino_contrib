@@ -8,7 +8,7 @@
   - [x] FilterState, AppState, Stats interfaces
   - [x] Complete type safety across application
 
-- [x] **Data Structure** (`src/data/models.json`)
+- [x] **Data Structure** (`src/data/genai_models.json`)
   - [x] 6 sample models across multiple categories
   - [x] 10 model variants with size specifications
   - [x] 4 OpenVINO versions (2024.5 - 2026.0)
@@ -121,7 +121,7 @@
 
 ### New Files (9)
 1. `src/types/index.ts` - Type definitions
-2. `src/data/models.json` - Model data
+2. `src/data/genai_models.json` - Model data
 3. `src/utils/dataHelpers.ts` - Data utilities
 4. `src/utils/validateData.ts` - Validation utilities
 5. `src/hooks/useModelData.ts` - Data loading hook

@@ -97,7 +97,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Model, variant, and version support types
   - Filter state and app state types
   - Statistics types
-- Model data structure (`src/data/models.json`)
+- Model data structure (`src/data/genai_models.json`)
   - Initial 6 models with 10 variants
   - Version support across 4 releases
   - Device compatibility tracking

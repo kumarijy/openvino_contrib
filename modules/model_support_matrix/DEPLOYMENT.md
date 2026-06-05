@@ -332,7 +332,7 @@ Before deploying to production:
 
 ### CORS Errors
 
-**Problem**: Cannot load data/models.json
+**Problem**: Cannot load data/genai_models.json
 
 **Solution**: 
 - Ensure data file is in dist/data/
