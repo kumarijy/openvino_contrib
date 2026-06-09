@@ -1,7 +1,0 @@
-# robots.txt for OpenVINO Model Support Matrix
-
-User-agent: *
-Allow: /
-
-# Sitemap location (update with actual deployment URL)
-Sitemap: https://kumarijy.github.io/openvino_contrib/sitemap.xml
